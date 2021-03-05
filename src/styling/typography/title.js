@@ -1,13 +1,15 @@
 import * as React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
+import { motion } from "framer-motion"
+
 import Typeface from "./typeface"
 import { getFontSize, getLineHeight } from "@typography/lib"
 
 import { useResponsiveSize } from "@hooks/index"
 import { isUndefined, isObject, isNotString, warn, error } from "@utils/index"
 
-const StyledTitle = styled.div`
+const StyledTitle = styled(motion.div)`
   ${Typeface}
   font-size: ${({ theme, as, variant, size, debug }) => {
     if (isUndefined(as)) {

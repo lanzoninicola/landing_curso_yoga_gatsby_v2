@@ -5,7 +5,7 @@ const typographyTheme = () => {
       maxLock: 1440,
     },
     primary: {
-      family: '"Manrope", sans-serif',
+      family: '"Montserrat Alternates", sans-serif',
       h1: {
         fontSize: { mobile: 38, tablet: 49, laptop: 56 },
         lineHeight: { mobile: 41, tablet: 52, laptop: 60 },
@@ -28,10 +28,10 @@ const typographyTheme = () => {
       },
     },
     secondary: {
-      family: '"Poppins", sans-serif',
+      family: '"Ropa Sans", sans-serif',
       body: {
-        fontSize: { mobile: 16, tablet: 16, laptop: 18 },
-        lineHeight: { mobile: 18, tablet: 19, laptop: 24 },
+        fontSize: { mobile: 22, tablet: 22, laptop: 26 },
+        lineHeight: { mobile: 23, tablet: 23, laptop: 27 },
       },
       small: {
         fontSize: { mobile: 10, tablet: 10, laptop: 13 },

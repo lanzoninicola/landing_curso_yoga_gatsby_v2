@@ -1,22 +1,22 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 
-import { ButtonPrimaryOrange, ButtonPrimaryBlue } from "@buttons"
+import { PrimaryButtonOrange, PrimaryButtonBlue } from "@buttons"
 
 const SubmitButton = ({ variant, color, children, ...props }) => {
   function renderPrimaryOrangeButton(props) {
     return (
-      <ButtonPrimaryOrange as="input" type="submit" {...props}>
+      <PrimaryButtonOrange as="input" type="submit" {...props}>
         {children}
-      </ButtonPrimaryOrange>
+      </PrimaryButtonOrange>
     )
   }
 
   function renderPrimaryBlueButton(props) {
     return (
-      <ButtonPrimaryBlue as="input" type="submit" {...props}>
+      <PrimaryButtonBlue as="input" type="submit" {...props}>
         {children}
-      </ButtonPrimaryBlue>
+      </PrimaryButtonBlue>
     )
   }
 

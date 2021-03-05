@@ -6,7 +6,7 @@ import useHover from "../_hooks/useHover"
 
 // TODO: make naming more generic
 // TODO: build a sort of state style (default, hover, onClick, focus) for button template
-const StyledButtonPrimaryBlue = styled(ButtonBase)`
+const StyledPrimaryButtonBlue = styled(ButtonBase)`
   background: ${({ theme }) => {
     return theme.button?.primary?.blue?.background.default
   }};
@@ -18,7 +18,7 @@ const StyledButtonPrimaryBlue = styled(ButtonBase)`
   }};
 `
 
-const StyledButtonPrimaryOrange = styled(ButtonBase)`
+const StyledPrimaryButtonOrange = styled(ButtonBase)`
   background: ${({ theme }) => {
     return theme.button?.primary?.orange?.background.default
   }};
@@ -30,22 +30,22 @@ const StyledButtonPrimaryOrange = styled(ButtonBase)`
   }};
 `
 
-export const ButtonPrimaryOrange = ({ children }) => {
+export const PrimaryButtonOrange = ({ children }) => {
   const [ref, hoveredStatus] = useHover()
 
   return (
-    <StyledButtonPrimaryOrange ref={ref} hovered={hoveredStatus}>
+    <StyledPrimaryButtonOrange ref={ref} hovered={hoveredStatus}>
       {children}
-    </StyledButtonPrimaryOrange>
+    </StyledPrimaryButtonOrange>
   )
 }
 
-export const ButtonPrimaryBlue = ({ children }) => {
+export const PrimaryButtonBlue = ({ children }) => {
   const [ref, hoveredStatus] = useHover()
 
   return (
-    <StyledButtonPrimaryBlue ref={ref} hovered={hoveredStatus}>
+    <StyledPrimaryButtonBlue ref={ref} hovered={hoveredStatus}>
       {children}
-    </StyledButtonPrimaryBlue>
+    </StyledPrimaryButtonBlue>
   )
 }

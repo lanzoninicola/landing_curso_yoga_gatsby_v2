@@ -41,6 +41,7 @@ const ImageQL = ({
   function setImageStyle() {
     return {
       ...imgStyle,
+      objectFit: "contain",
       ...resetGatsbyImageStyle(),
     }
   }

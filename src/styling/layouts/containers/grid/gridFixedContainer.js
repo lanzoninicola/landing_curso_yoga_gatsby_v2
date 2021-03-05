@@ -1,7 +1,8 @@
 import * as React from "react"
 import styled from "styled-components"
-import Grid from "./grid"
+import { motion } from "framer-motion"
 
+import Grid from "./grid"
 import { parseGridTemplateValues } from "@layouts/lib/index"
 import { isUndefined, isNotString, warn, error } from "@utils/index"
 
@@ -13,7 +14,7 @@ import { isUndefined, isNotString, warn, error } from "@utils/index"
  *
  */
 
-const StyledGridFixedContainer = styled.div`
+const StyledGridFixedContainer = styled(motion.div)`
   ${Grid}
   grid-template-columns: ${({ columns, cAuto }) => {
     if (!cAuto && isUndefined(columns)) {

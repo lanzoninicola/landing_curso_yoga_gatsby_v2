@@ -18,29 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `services_images`,
-        path: `${__dirname}/src/images/services`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `maps_images`,
-        path: `${__dirname}/src/images/store_map`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `hero_carousel`,
-        path: `${__dirname}/src/images/hero_carousel/mobile`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images/global`,
+        name: `splashScreen`,
+        path: `${__dirname}/src/images/splashScreen`,
       },
     },
     `gatsby-transformer-sharp`,

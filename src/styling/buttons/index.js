@@ -1,9 +1,11 @@
-import { ButtonPrimaryBlue, ButtonPrimaryOrange } from "./primary"
+import { PrimaryButtonBlue, PrimaryButtonOrange } from "./primary"
 import { ButtonSecondaryGreen, ButtonSecondaryYellow } from "./secondary"
+import ButtonBase from "./buttonBase"
 
 export {
-  ButtonPrimaryBlue,
-  ButtonPrimaryOrange,
+  ButtonBase,
+  PrimaryButtonBlue,
+  PrimaryButtonOrange,
   ButtonSecondaryGreen,
   ButtonSecondaryYellow,
 }

@@ -27,7 +27,7 @@ function layoutTheme() {
           default: devicesBreakpoints.mobile.small.width,
           custom: devicesBreakpoints.tablet.small.width - 10,
         },
-        // This state for the min-heifht of rows
+        // This state for the min-height of rows
         rows: {
           default: devicesBreakpoints.mobile.small.height / 4,
           custom: undefined,

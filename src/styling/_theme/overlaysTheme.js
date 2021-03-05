@@ -1,11 +1,5 @@
 import * as React from "react"
-
 import { colorsTheme } from "@theme"
-import BottomSheet from "../overlays/bottomSheet/bottomSheet"
-import FaleConosco from "../../components/home-page/fale-conosco/mobile/fale-conosco"
-import Map from "../../components/home-page/map/mobile/map"
-import Institutional from "../../components/home-page/institutional/mobile/institutional"
-import FaleConoscoFormWrapper from "../../components/home-page/fale-conosco/shared/fale-conosco-form-wrapper"
 
 const overlaysTheme = () => {
   return {
@@ -33,52 +27,52 @@ const overlaysTheme = () => {
       },
     },
     modals: {
-      navbarLaptop: {
-        ModalHorarios: props => (
-          <BottomSheet {...props}>
-            <FaleConosco />
-          </BottomSheet>
-        ),
-        ModalPesquisa: props => (
-          <BottomSheet {...props}>
-            <FaleConoscoFormWrapper />
-          </BottomSheet>
-        ),
-      },
-      navbarMobile: {
-        ModalFaleConosco: props => (
-          <BottomSheet {...props}>
-            <FaleConosco />
-          </BottomSheet>
-        ),
-        ModalAmbientes: props => (
-          <BottomSheet {...props}>
-            <FaleConoscoFormWrapper />
-          </BottomSheet>
-        ),
-        ModalMap: props => (
-          <BottomSheet {...props}>
-            <Map />
-          </BottomSheet>
-        ),
-        ModalInstitutional: props => (
-          <BottomSheet {...props}>
-            <Institutional />
-          </BottomSheet>
-        ),
-        ModalAgendamento: props => (
-          <BottomSheet {...props}>
-            <Institutional />
-          </BottomSheet>
-        ),
-      },
-      faleConosco: {
-        ModalFaleConoscoForm: props => (
-          <BottomSheet {...props}>
-            <FaleConoscoFormWrapper />
-          </BottomSheet>
-        ),
-      },
+      // navbarLaptop: {
+      //   ModalHorarios: props => (
+      //     <BottomSheet {...props}>
+      //       <FaleConosco />
+      //     </BottomSheet>
+      //   ),
+      //   ModalPesquisa: props => (
+      //     <BottomSheet {...props}>
+      //       <FaleConoscoFormWrapper />
+      //     </BottomSheet>
+      //   ),
+      // },
+      // navbarMobile: {
+      //   ModalFaleConosco: props => (
+      //     <BottomSheet {...props}>
+      //       <FaleConosco />
+      //     </BottomSheet>
+      //   ),
+      //   ModalAmbientes: props => (
+      //     <BottomSheet {...props}>
+      //       <FaleConoscoFormWrapper />
+      //     </BottomSheet>
+      //   ),
+      //   ModalMap: props => (
+      //     <BottomSheet {...props}>
+      //       <Map />
+      //     </BottomSheet>
+      //   ),
+      //   ModalInstitutional: props => (
+      //     <BottomSheet {...props}>
+      //       <Institutional />
+      //     </BottomSheet>
+      //   ),
+      //   ModalAgendamento: props => (
+      //     <BottomSheet {...props}>
+      //       <Institutional />
+      //     </BottomSheet>
+      //   ),
+      // },
+      // faleConosco: {
+      //   ModalFaleConoscoForm: props => (
+      //     <BottomSheet {...props}>
+      //       <FaleConoscoFormWrapper />
+      //     </BottomSheet>
+      //   ),
+      // },
     },
   }
 }

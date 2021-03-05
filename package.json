@@ -6,7 +6,9 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@fontsource/manrope": "^4.1.1",
+    "@fontsource/montserrat-alternates": "^4.2.2",
     "@fontsource/poppins": "^4.1.0",
+    "@fontsource/ropa-sans": "^4.2.2",
     "babel-plugin-styled-components": "^1.12.0",
     "framer-motion": "^3.2.1",
     "gatsby": "^2.31.1",
@@ -20,7 +22,9 @@
     "gatsby-plugin-styled-components": "^3.9.0",
     "gatsby-source-filesystem": "^2.10.0",
     "gatsby-transformer-sharp": "^2.11.0",
+    "install": "^0.13.0",
     "leaflet": "^1.7.1",
+    "npm": "^7.6.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -29,6 +33,7 @@
     "react-leaflet": "^3.1.0",
     "styled-components": "^5.2.1",
     "styled-reset": "^4.3.4",
+    "typewriter-effect": "^2.17.0",
     "use-deep-compare-effect": "^1.6.1"
   },
   "devDependencies": {

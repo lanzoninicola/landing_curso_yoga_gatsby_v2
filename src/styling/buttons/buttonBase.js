@@ -1,10 +1,10 @@
-import { css } from "styled-components"
 import * as React from "react"
 import styled from "styled-components"
 import { Size } from "@layouts"
 
 const StyledButtonBase = styled.button`
   ${Size}
+  position: relative;
   border: none;
   border-radius: 50px;
   font-family: ${({ theme }) => theme.typography.secondary.family};
