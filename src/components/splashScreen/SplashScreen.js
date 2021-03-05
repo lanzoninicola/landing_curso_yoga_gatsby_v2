@@ -87,6 +87,8 @@ const SplashScreen = () => {
     },
   }
 
+  console.log("splashscreen", height)
+
   return (
     <GridFixedContainer
       columns="1fr"
