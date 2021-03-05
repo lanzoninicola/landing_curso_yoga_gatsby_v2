@@ -25,8 +25,7 @@ const StyledText = styled.div`
 
     console.log("styledText _fontSize", _fontSize)
 
-    // return useResponsiveSize(_fontSize, debug)
-    return _fontSize
+    return useResponsiveSize(_fontSize, debug)
   }};
   line-height: ${({ theme, variant, size, lh }) => {
     const themeVariant = theme.typography[variant]
