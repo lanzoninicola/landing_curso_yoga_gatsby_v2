@@ -49,6 +49,13 @@ export default function useResponsiveSize(
     resultSize = userSize
   }
 
+  console.log(
+    "useresponsivesize resultSize",
+    currentDeviceFormFactor,
+    currentViewportDiagonal,
+    resultSize
+  )
+
   if (debug) {
     log("useResponsiveSize", {
       currentViewportDiagonal,
