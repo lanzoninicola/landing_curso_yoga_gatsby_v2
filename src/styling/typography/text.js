@@ -11,7 +11,6 @@ import { getFontSize, getLineHeight } from "@typography/lib"
 const StyledText = styled.div`
   ${Typeface}
   font-size: ${({ theme, variant, size, debug }) => {
-    console.log("styledText fired")
     const themeVariant = theme.typography[variant]
     if (!themeVariant.hasOwnProperty("body")) {
       error(
@@ -23,6 +22,8 @@ const StyledText = styled.div`
 
     const devicesFontSize = themeVariant?.body.fontSize
     const _fontSize = getFontSize(size, devicesFontSize)
+
+    console.log("styledText _fontSize", _fontSize)
 
     return useResponsiveSize(_fontSize, debug)
   }};
