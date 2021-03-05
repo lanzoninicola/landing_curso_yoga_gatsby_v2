@@ -134,6 +134,7 @@ const SplashScreen = () => {
         }}
       >
         <FlexContainer row stretchXS>
+          <div>dafljafljas</div>
           <Text size={{ laptop: 32, tablet: 32, mobile: 32 }}>Entre</Text>
           <SVGIcon name="ARROW_RIGHT" pl="8" />
         </FlexContainer>
