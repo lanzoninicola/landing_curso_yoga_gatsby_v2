@@ -1,6 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
-import { isUndefined, isFunction, error } from "@utils"
+import { isUndefined, error } from "@utils"
 
 const Svg = ({ sourcePath, color, size, wSVG, hSVG }) => {
   const _height = hSVG ?? size

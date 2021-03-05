@@ -2,7 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
 
-import { isNotString, isUndefined, isNotUndefined, error } from "@utils/index"
+import { isNotString, isUndefined, error } from "@utils/index"
 import { useViewportInfo } from "@hooks"
 
 import setGatsbyFluidData from "../lib/setGatsbyFluidData"

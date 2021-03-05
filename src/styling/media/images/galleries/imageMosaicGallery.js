@@ -8,7 +8,7 @@ import {
   GridMosaicCellBase,
 } from "@layouts"
 import { useViewportInfo } from "@hooks"
-import { randomItemFromArray, objectKeys } from "@utils"
+import { randomItemFromArray } from "@utils"
 
 import { ImageQL } from "../index"
 import mapGraphQLImageData from "../lib/mapGraphQLImageData"

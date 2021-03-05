@@ -3,6 +3,9 @@ import getCurrentViewportDiagonal from "./getCurrentViewportDiagonal"
 import getCurrentDevice from "./getCurrentDevice"
 import breakpointsDesignSpec from "./breakpointsDesignSpec"
 import CSSRelativeUnits from "./CSSRelativeUnits"
+import getCSSUnit from "./getCSSUnit"
+import isValidCSSUnit from "./isValidCSSUnit"
+import getCSSNumberValue from "./getCSSNumberValue"
 import composeCSSValue from "./composeCSSValue"
 import parseGridTemplateValues from "./parseGridTemplateValues"
 import getBreakpoints from "./getBreakpoints"
@@ -12,6 +15,9 @@ import DOMViewportInfo from "./DOMViewportInfo"
 
 export {
   CSSRelativeUnits,
+  getCSSUnit,
+  isValidCSSUnit,
+  getCSSNumberValue,
   composeCSSValue,
   getCurrentWindowSize,
   getCurrentViewportDiagonal,

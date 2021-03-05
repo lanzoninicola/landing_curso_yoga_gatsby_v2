@@ -1,20 +1,21 @@
 import { composeCSSValue, breakpointsDesignSpec } from "@layouts/lib/index"
+
 import { useViewportInfo } from "@hooks"
-import { isObject, isNumber, isString, log } from "@utils/index"
+import { isObject } from "@utils/index"
 import React from "react"
 
-// SOURCE
+// INSPIRATION
 // https://blog.typekit.com/2016/08/17/flexible-typography-with-css-locks/
 // https://fvsch.com/css-locks
+
+// This hook works only with PXs value
 
 export default function useResponsiveSize(
   size = {},
   debug = false
   // userDiagonal
 ) {
-  // I can't use ThemeProvider data, some components using this function are mounted
-  // before the values requested here (device, diagonal) and located in the "theme" are available
-  const [resultSize, setResultSize] = React.useState(`${size}px`)
+  const [responsiveSize, setResponsiveSize] = React.useState()
   const {
     device: currentDeviceFormFactor,
     diagonal: currentViewportDiagonal,
@@ -23,61 +24,30 @@ export default function useResponsiveSize(
     currentDeviceFormFactor
   )
 
+  function exitNoChanges() {
+    return size
+  }
+
+  const getUserSize = React.useCallback(() => {
+    return isObject(size) ? size[currentDeviceFormFactor] ?? 0 : size
+  }, [currentDeviceFormFactor, size])
+
+  const getResponsiveSize = React.useCallback(() => {
+    const _userSize = getUserSize()
+    const { value: userSize, unit: userUnit } = composeCSSValue(_userSize)
+
+    if (userUnit !== "px" || userUnit !== "PX") exitNoChanges()
+
+    const _responsiveSize = Math.round(
+      (currentViewportDiagonal / viewportDiagonalDesignSpec) * userSize
+    )
+
+    setResponsiveSize(_responsiveSize)
+  }, [getUserSize, currentViewportDiagonal])
+
   React.useEffect(() => {
-    let userSize = 0
-    let userUnit = null
-    let _resultSize = 0
+    getResponsiveSize()
+  }, [currentViewportDiagonal, getResponsiveSize])
 
-    const isFixedSize = isNumber(size) || isString(size)
-    const isResponsiveSize = isObject(size)
-
-    if (isFixedSize) {
-      const { value, unit } = composeCSSValue(size)
-      userSize = value
-      userUnit = unit
-    }
-
-    if (isResponsiveSize) {
-      const responsiveSize = size[currentDeviceFormFactor] ?? 0
-      const { value, unit } = composeCSSValue(responsiveSize)
-      userSize = value
-      userUnit = unit
-    }
-
-    if (userUnit === "px" || userUnit === "PX") {
-      _resultSize = Math.round(
-        (currentViewportDiagonal / viewportDiagonalDesignSpec) * userSize
-      )
-    } else {
-      _resultSize = userSize
-    }
-
-    setResultSize(() => setResultSize(`${_resultSize}${userUnit}`))
-  })
-
-  // console.log(
-  //   "useresponsivesize currentDeviceFormFactor",
-  //   currentDeviceFormFactor,
-  //   "currentViewportDiagonal",
-  //   currentViewportDiagonal,
-  //   "viewportDiagonalDesignSpec",
-  //   viewportDiagonalDesignSpec,
-  //   "userSize",
-  //   userSize,
-  //   "resultSize",
-  //   resultSize
-  // )
-
-  // if (debug) {
-  //   log("useResponsiveSize", {
-  //     currentViewportDiagonal,
-  //     viewportDiagonalDesignSpec,
-  //     userSize,
-  //     userUnit,
-  //     resultSize,
-  //   })
-  // }
-
-  // return `${resultSize}${userUnit}`
-  return resultSize
+  return `${responsiveSize}px`
 }
