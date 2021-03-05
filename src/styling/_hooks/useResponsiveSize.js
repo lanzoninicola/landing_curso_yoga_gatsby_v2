@@ -50,9 +50,15 @@ export default function useResponsiveSize(
   }
 
   console.log(
-    "useresponsivesize resultSize",
+    "useresponsivesize currentDeviceFormFactor",
     currentDeviceFormFactor,
+    "currentViewportDiagonal",
     currentViewportDiagonal,
+    "viewportDiagonalDesignSpec",
+    viewportDiagonalDesignSpec,
+    "userSize",
+    userSize,
+    "resultSize",
     resultSize
   )
 
