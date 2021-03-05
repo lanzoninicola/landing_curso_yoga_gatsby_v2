@@ -37,6 +37,7 @@ const ViewportProvider = ({ children }) => {
 
   const resizeStop = React.useCallback(() => {
     if (isDomAvailable) {
+      window.removeEventListener("load", updateWindowSize)
       window.removeEventListener("resize", updateWindowSize)
     }
   }, [updateWindowSize])
@@ -45,6 +46,7 @@ const ViewportProvider = ({ children }) => {
     debounce(updateWindowSize(), 100)
 
     if (isDomAvailable) {
+      window.removeEventListener("load", updateWindowSize)
       window.addEventListener("resize", updateWindowSize)
     }
   }, [updateWindowSize])
