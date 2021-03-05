@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import PrimaryInputText from "./lib/inputText/PrimaryInputText"
+import PrimaryInputText from "./lib/inputText/primaryInputText"
 import FirebaseInputText from "./lib/inputText/firebaseInputText"
 import FirebaseInputTextArea from "./lib/textArea/firebaseTextArea"
 import PrimaryTextArea from "./lib/textArea/primaryTextArea"
