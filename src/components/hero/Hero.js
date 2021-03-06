@@ -9,16 +9,28 @@ import { Bouncer } from "@animations"
 import HeroImage from "./HeroImage"
 import HeroTagLine from "./HeroTagLine"
 
-const Hero = () => {
-  const { height } = useViewportInfo()
-  const [showArrow, setShowArrow] = React.useState(false)
-
+const ArrowBottom = () => {
   const reveal = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
     },
   }
+  return (
+    <FlexContainer row h100 w100 top right pr="32">
+      {/* <Text size={{ laptop: 32, tablet: 32, mobile: 32 }}>Entre</Text> */}
+      <motion.div variants={reveal} initial="hidden" animate="visible">
+        <Bouncer>
+          <SVGIcon name="ARROW_BOTTOM" size="48" />
+        </Bouncer>
+      </motion.div>
+    </FlexContainer>
+  )
+}
+
+const Hero = () => {
+  const { height } = useViewportInfo()
+  const [showArrow, setShowArrow] = React.useState(false)
 
   return (
     <Sticky style={{ overflow: "hidden" }}>
@@ -40,20 +52,7 @@ const Hero = () => {
             <FlexContainer row h100 w100 bottom>
               <HeroTagLine showArrow={setShowArrow} />
             </FlexContainer>
-            {showArrow && (
-              <FlexContainer row h100 w100 top right pr="32">
-                {/* <Text size={{ laptop: 32, tablet: 32, mobile: 32 }}>Entre</Text> */}
-                <motion.div
-                  variants={reveal}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  <Bouncer>
-                    <SVGIcon name="ARROW_BOTTOM" size="48" />
-                  </Bouncer>
-                </motion.div>
-              </FlexContainer>
-            )}
+            {showArrow && <ArrowBottom />}
           </GridFixedContainer>
         </GridFixedContainer>
       </FlexContainer>
