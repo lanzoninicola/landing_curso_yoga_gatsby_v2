@@ -28,6 +28,7 @@ import debounce from "./debounce"
 import objectKeys from "./objectKeys"
 import removePropsFromObject from "./removePropsFromObject"
 import randomItemFromArray from "./randomItemFromArray"
+import isBoolean from "./isBoolean"
 
 export {
   left,
@@ -62,4 +63,5 @@ export {
   objectKeys,
   removePropsFromObject,
   randomItemFromArray,
+  isBoolean,
 }

@@ -1,11 +1,11 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
-import { Space } from "@layouts/index"
-import { Size } from "@layouts/index"
+import { Space, Size, Position } from "@layouts/index"
 
 const Flex = styled(motion.div)`
   ${Space}
   ${Size}
+  ${Position}
   display: flex;
   justify-content: ${({
     left,
@@ -46,14 +46,6 @@ const Flex = styled(motion.div)`
     if (column) return `column`
     if (direction === "column") return `column` // it will deprecated
     return `column`
-  }};
-  position: ${({ relative, absolute, fixed, sticky }) => {
-    if (relative) return `relative`
-    if (absolute) return `absolute`
-    if (fixed) return `fixed`
-    if (sticky) return `sticky`
-
-    return `relative`
   }};
   ${props => props.$style ?? {}}
 `

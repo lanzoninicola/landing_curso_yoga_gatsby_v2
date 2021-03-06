@@ -3,6 +3,7 @@ import ViewportProvider from "./viewport/viewportProvider"
 
 import Space from "./composition/space/space"
 import Size from "./composition/size/size"
+import Position from "./composition/position/position"
 
 import FlexContainer from "./containers/flex/flexContainer"
 import FlexMotionContainer from "./containers/flex/flexMotionContainer"
@@ -23,8 +24,6 @@ import TextBox from "./containers/textBox/textBox"
 
 import SizedBox from "./containers/sizedBox/sizedBox"
 
-import Sticky from "./containers/sticky/Sticky"
-
 import HeaderFixedContainer from "./composition/header/headerFixedContainer"
 import HeaderScrollContainer from "./composition/header/headerScrollContainer"
 
@@ -33,6 +32,7 @@ export {
   ViewportProvider,
   Space,
   Size,
+  Position,
   FlexContainer,
   PancakeStack,
   GridFixedContainer,
@@ -47,5 +47,4 @@ export {
   GridMosaicCellWide,
   GridMosaicCellBase,
   SizedBox,
-  Sticky,
 }

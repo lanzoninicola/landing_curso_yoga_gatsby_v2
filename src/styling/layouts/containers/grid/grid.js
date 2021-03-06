@@ -1,6 +1,5 @@
 import { css } from "styled-components"
-import { Space } from "@layouts/index"
-import { Size } from "@layouts/index"
+import { Space, Size, Position } from "@layouts/index"
 
 import { useResponsiveSize } from "@hooks/index"
 
@@ -9,7 +8,7 @@ import { useResponsiveSize } from "@hooks/index"
 const Grid = css`
   ${Space}
   ${Size}
-
+  ${Position}
   display: grid;
   justify-items: ${({ left, centerX, right, stretchX }) => {
     if (left) return `start`
@@ -28,14 +27,6 @@ const Grid = css`
     const themeGridLayout = theme?.layout?.grid
 
     return useResponsiveSize(themeGridLayout.gap.default)
-  }};
-  position: ${({ relative, absolute, fixed, sticky }) => {
-    if (relative) return `relative`
-    if (absolute) return `absolute`
-    if (fixed) return `fixed`
-    if (sticky) return `sticky`
-
-    return `relative`
   }};
   max-width: 100vw;
   background: ${({ bg }) => {
