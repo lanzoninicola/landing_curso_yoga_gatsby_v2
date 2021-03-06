@@ -21,6 +21,10 @@ import Span from "./containers/span/span"
 
 import TextBox from "./containers/textBox/textBox"
 
+import SizedBox from "./containers/sizedBox/sizedBox"
+
+import Sticky from "./containers/sticky/Sticky"
+
 import HeaderFixedContainer from "./composition/header/headerFixedContainer"
 import HeaderScrollContainer from "./composition/header/headerScrollContainer"
 
@@ -42,4 +46,6 @@ export {
   GridMosaicCellTall,
   GridMosaicCellWide,
   GridMosaicCellBase,
+  SizedBox,
+  Sticky,
 }

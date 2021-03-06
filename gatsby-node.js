@@ -18,6 +18,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         "@styling": path.resolve(__dirname, "src/styling/"),
         "@gatsby": path.resolve(__dirname, "src/styling/_gatsby"),
         "@hooks": path.resolve(__dirname, "src/styling/_hooks/"),
+        "@animations": path.resolve(__dirname, "src/styling/animations/"),
         "@buttons": path.resolve(__dirname, "src/styling/buttons/"),
         "@carousel": path.resolve(__dirname, "src/styling/carousel/"),
         "@decorative": path.resolve(__dirname, "src/styling/decorative/"),
