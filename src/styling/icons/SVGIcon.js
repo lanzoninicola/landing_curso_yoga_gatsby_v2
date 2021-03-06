@@ -5,7 +5,7 @@ import { ThemeContext } from "styled-components"
 import { FlexContainer } from "@layouts/index"
 import { useViewportInfo } from "@hooks"
 import { isUndefined, isFunction, error } from "@utils"
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 import Svg from "./Svg"
 import getIconSize from "./lib/getIconSize"
 
@@ -17,7 +17,7 @@ function SVGIcon({ name, size, color, wSVG, hSVG, ...props }) {
   const { device: currentDevice } = useViewportInfo()
   const iconSize = getIconSize(size, currentDevice)
   const iconName = name.toUpperCase()
-  const iconColor = typeof color === "function" ? color : colorsTheme(color)
+  const iconColor = typeof color === "function" ? color : colorTheme(color)
 
   const SVGSource = iconsTheme?.catalog?.[iconName]?.[iconSize]
 

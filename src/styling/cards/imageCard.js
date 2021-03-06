@@ -3,7 +3,7 @@ import * as React from "react"
 import styled from "styled-components"
 
 // import { motion } from "framer-motion"
-import { colorsTheme } from "@theme/index"
+import { colorTheme } from "@colors/lib"
 import { Space, Size } from "@layouts/index"
 import { ImageTitle, ImageQL } from "@images/index"
 // import {SVGIcon} from "@icons/index"
@@ -13,7 +13,7 @@ const StyledImageCard = styled.div`
   ${Size}
   position: relative;
   background: ${({ card }) => {
-    if (card?.bg) return colorsTheme(card?.bg)
+    if (card?.bg) return colorTheme(card?.bg)
     return null
   }};
   border-radius: ${({ card }) => {
@@ -56,7 +56,7 @@ const ImageCard = ({
         lowercase={imageLabel?.lowercase}
         bg={
           imageLabel?.bg
-            ? colorsTheme(imageLabel?.bg, {
+            ? colorTheme(imageLabel?.bg, {
                 colorUnit: "rgba",
                 opacity: imageLabel?.opacity ?? 1,
               })

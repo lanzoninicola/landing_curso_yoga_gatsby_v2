@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 
 // import { motion } from "framer-motion"
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 import { FlexContainer, Space, Size } from "@layouts/index"
 
 // TODO: view if this component can be replaced by "ImageCard" component
@@ -14,7 +14,7 @@ const StyledCardWrapper = styled.div`
   position: relative;
   min-width: 100%;
   background: ${({ theme, bg }) => {
-    if (bg) return colorsTheme(bg)
+    if (bg) return colorTheme(bg)
     return theme?.components?.config?.carousel?.card?.background
   }};
   border-radius: ${({ theme }) =>

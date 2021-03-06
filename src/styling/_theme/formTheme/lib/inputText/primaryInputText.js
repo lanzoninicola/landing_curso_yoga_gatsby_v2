@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { colorsTheme } from "@theme/index"
+import { colorTheme } from "@colors/lib"
 import { Space, Size } from "@layouts/index"
 import { useResponsiveSize } from "@hooks/index"
 
@@ -23,16 +23,16 @@ const PrimaryInputText = styled.input`
     return useResponsiveSize(lineHeight)
   }};
   text-transform: lowercase;
-  color: ${() => colorsTheme("blue")};
+  color: ${() => colorTheme("blue")};
   background: transparent;
   padding: 0px 4px;
   border: 0;
-  border-bottom: ${() => `3px solid ${colorsTheme("blue")}`};
-  border-color: ${() => colorsTheme("blue")};
+  border-bottom: ${() => `3px solid ${colorTheme("blue")}`};
+  border-color: ${() => colorTheme("blue")};
   transition: border 0.15s cubic-bezier(0, 0, 0.2, 1);
 
   caret-color: ${() =>
-    colorsTheme("orange", { colorUnit: "rgba", opacity: "0.5" })};
+    colorTheme("orange", { colorUnit: "rgba", opacity: "0.5" })};
 
   &:focus {
     outline: none;

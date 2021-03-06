@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import { FlexContainer } from "@layouts/index"
 import { SVGIcon } from "@icons/index"
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 import { SmallText } from "@typography/index"
 
 const StyledCloseModalButton = styled.div`

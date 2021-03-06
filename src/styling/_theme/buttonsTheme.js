@@ -1,4 +1,4 @@
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 
 const buttonTheme = () => {
   return {
@@ -6,35 +6,35 @@ const buttonTheme = () => {
       blue: {
         border: {
           default: "none",
-          onFocus: `2px solid ${colorsTheme("orange")}`,
+          onFocus: `2px solid ${colorTheme("orange")}`,
           onHover: "none",
         },
         background: {
-          default: colorsTheme("blue"),
-          onFocus: colorsTheme("blue"),
-          onHover: colorsTheme("blueLight"),
+          default: colorTheme("blue"),
+          onFocus: colorTheme("blue"),
+          onHover: colorTheme("blueLight"),
         },
         labelColor: {
-          default: colorsTheme("whitegray"),
-          onFocus: colorsTheme("orange"),
-          onHover: colorsTheme("whitegray"),
+          default: colorTheme("whitegray"),
+          onFocus: colorTheme("orange"),
+          onHover: colorTheme("whitegray"),
         },
       },
       orange: {
         border: {
           default: "none",
-          onFocus: `2px solid ${colorsTheme("blue")}`,
+          onFocus: `2px solid ${colorTheme("blue")}`,
           onHover: "none",
         },
         background: {
-          default: colorsTheme("orange"),
-          onFocus: colorsTheme("orange"),
-          onHover: colorsTheme("orangeLight"),
+          default: colorTheme("orange"),
+          onFocus: colorTheme("orange"),
+          onHover: colorTheme("orangeLight"),
         },
         labelColor: {
-          default: colorsTheme("whitegray"),
-          onFocus: colorsTheme("blue"),
-          onHover: colorsTheme("whitegray"),
+          default: colorTheme("whitegray"),
+          onFocus: colorTheme("blue"),
+          onHover: colorTheme("whitegray"),
         },
       },
     },
@@ -43,35 +43,35 @@ const buttonTheme = () => {
       green: {
         border: {
           default: "none",
-          onFocus: `2px solid ${colorsTheme("blue")}`,
+          onFocus: `2px solid ${colorTheme("blue")}`,
           onHover: "none",
         },
         background: {
-          default: colorsTheme("green"),
-          onFocus: colorsTheme("green"),
-          onHover: colorsTheme("greenLight"),
+          default: colorTheme("green"),
+          onFocus: colorTheme("green"),
+          onHover: colorTheme("greenLight"),
         },
         labelColor: {
-          default: colorsTheme("blue"),
-          onFocus: colorsTheme("blue"),
-          onHover: colorsTheme("blue"),
+          default: colorTheme("blue"),
+          onFocus: colorTheme("blue"),
+          onHover: colorTheme("blue"),
         },
       },
       yellow: {
         border: {
           default: "none",
-          onFocus: `2px solid ${colorsTheme("blue")}`,
+          onFocus: `2px solid ${colorTheme("blue")}`,
           onHover: "none",
         },
         background: {
-          default: colorsTheme("yellow"),
-          onFocus: colorsTheme("yellow"),
-          onHover: colorsTheme("yellowLight"),
+          default: colorTheme("yellow"),
+          onFocus: colorTheme("yellow"),
+          onHover: colorTheme("yellowLight"),
         },
         labelColor: {
-          default: colorsTheme("blue"),
-          onFocus: colorsTheme("blue"),
-          onHover: colorsTheme("blue"),
+          default: colorTheme("blue"),
+          onFocus: colorTheme("blue"),
+          onHover: colorTheme("blue"),
         },
       },
     },

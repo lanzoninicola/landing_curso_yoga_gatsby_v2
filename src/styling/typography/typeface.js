@@ -5,7 +5,7 @@ import Space from "../layouts/composition/space/space"
 import { useResponsiveSize } from "@hooks"
 import { getCurrentDeviceValue } from "@layouts/lib/index"
 import { isObject } from "@utils"
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 
 const Typeface = css`
   ${Space}
@@ -42,10 +42,10 @@ const Typeface = css`
     }
 
     if (opacity) {
-      return colorsTheme(color, { colorUnit: "rgba", opacity: opacity })
+      return colorTheme(color, { opacity: opacity })
     }
 
-    return colorsTheme(color)
+    return colorTheme(color)
   }};
   text-align: ${({ align, center, right, left }) => {
     if (align) return align

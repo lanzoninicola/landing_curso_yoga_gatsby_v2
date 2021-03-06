@@ -1,4 +1,4 @@
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 
 const navbarLaptopLayout = () => {
   const layout = {
@@ -26,11 +26,11 @@ const navbarLaptopLayout = () => {
         size: 12, // value in PX
         lineHeight: 12, // value in PX
         color: {
-          default: colorsTheme("blue"),
-          hovered: colorsTheme("blue"),
+          default: colorTheme("blue"),
+          hovered: colorTheme("blue"),
           spotligthed: {
-            orange: colorsTheme("orange"),
-            green: colorsTheme("green"),
+            orange: colorTheme("orange"),
+            green: colorTheme("green"),
           },
         },
       },

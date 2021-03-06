@@ -2,7 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 
 import { SVGIcon } from "@icons"
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 
 const StyledSubmitIconButton = styled.button`
   position: relative;
@@ -10,7 +10,7 @@ const StyledSubmitIconButton = styled.button`
   height: 50px;
   border: 0px;
   border-radius: 50%;
-  background: ${({ bg }) => colorsTheme(bg)};
+  background: ${({ bg }) => colorTheme(bg)};
   cursor: pointer;
 `
 

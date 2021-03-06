@@ -2,7 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 
 import { Text } from "@typography"
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 import { isUndefined, removePropsFromObject, error } from "@utils"
 
 const InputLabel = ({ htmlFor, text, style = {} }) => {
@@ -13,7 +13,7 @@ const InputLabel = ({ htmlFor, text, style = {} }) => {
       as="label"
       htmlFor={htmlFor ?? ""}
       weight={style?.weight}
-      color={colorsTheme(style?.color)}
+      color={colorTheme(style?.color)}
       capitalize="uppercase"
       ls="1px"
       mb="6px"

@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { FlexContainer, Space } from "@layouts/index"
 import { composeCSSValue } from "@layouts/lib/index"
 import { Title } from "@typography/index"
-import { colorsTheme } from "@theme/index"
+import { colorTheme } from "@colors/lib"
 
 /**
  *  Positions:
@@ -88,7 +88,7 @@ const ImageTitle = ({
       <FlexContainer row centerX centerY>
         <Title
           as="h4"
-          color={colorsTheme(color) ?? colorsTheme("black")}
+          color={colorTheme(color) ?? colorTheme("black")}
           uppercase={uppercase ?? null}
           lowercase={lowercase ?? null}
         >

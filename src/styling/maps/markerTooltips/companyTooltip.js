@@ -3,7 +3,7 @@ import { FlexContainer } from "@layouts/index"
 import { useStaticQuery, graphql } from "gatsby"
 import { ImageQL } from "@images/index"
 import { Title } from "@typography/index"
-import { colorsTheme } from "@theme/index"
+import { colorTheme } from "@colors/lib"
 
 const CompanyTooltip = ({ shortName }) => {
   const data = useStaticQuery(
@@ -42,7 +42,7 @@ const CompanyTooltip = ({ shortName }) => {
           borderRadius: 10,
         }}
       />
-      <Title weight="600" variant="secondary" color={colorsTheme("orange")}>
+      <Title weight="600" variant="secondary" color={colorTheme("orange")}>
         {shortName}
       </Title>
     </FlexContainer>

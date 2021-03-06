@@ -1,4 +1,4 @@
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 
 const carouselTheme = section => {
   const carouselTheme = {
@@ -9,7 +9,7 @@ const carouselTheme = section => {
             background: "white",
             borderRadius: "25px",
             shadow: {
-              color: colorsTheme("whitegray"),
+              color: colorTheme("whitegray"),
             },
           },
         },

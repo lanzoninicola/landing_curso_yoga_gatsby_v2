@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { colorsTheme } from "@theme/index"
+import { colorTheme } from "@colors/lib"
 import { Size } from "@layouts/index"
 import { composeCSSValue } from "@layouts/lib/index"
 import { isUndefined, warn } from "@utils/index"
@@ -8,8 +8,7 @@ import { isUndefined, warn } from "@utils/index"
 const Box = styled.div`
   ${Size}
   background: ${({ bg, opacity }) => {
-    return colorsTheme(bg, {
-      colorUnit: "rgba",
+    return colorTheme(bg, {
       opacity: opacity ?? 1,
     })
   }};

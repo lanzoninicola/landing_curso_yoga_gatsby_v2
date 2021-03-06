@@ -3,7 +3,7 @@
  * @param {string} color
  */
 import colorsTheme from "../colorsTheme"
-import { isNotString, error } from "@utils"
+import { isNotUndefined, isNotString, error } from "@utils"
 
 function isColorTheme(color) {
   if (isNotString(color)) {

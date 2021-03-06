@@ -1,7 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
 import { Size } from "@layouts"
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 import { isUndefined } from "@utils"
 
 const StyledForegroundGradient = styled.div`
@@ -12,7 +12,7 @@ const StyledForegroundGradient = styled.div`
   z-index: 1;
   background: ${({ gradient }) => {
     const colorStart = gradient?.start ?? "black"
-    const _colorStart = colorsTheme(colorStart)
+    const _colorStart = colorTheme(colorStart)
 
     return `${_colorStart}`
   }};
@@ -22,16 +22,16 @@ const StyledForegroundGradient = styled.div`
     const colorStart = gradient?.start ?? "black"
     const colorEnd = gradient?.end
 
-    const _colorStart = colorsTheme(colorStart, {
+    const _colorStart = colorTheme(colorStart, {
       colorUnit: "rgba",
       opacity: 1,
     })
 
     let _colorEnd = ""
     if (isUndefined(colorEnd)) {
-      _colorEnd = colorsTheme(colorStart, { colorUnit: "rgba", opacity: 0 })
+      _colorEnd = colorTheme(colorStart, { opacity: 0 })
     } else {
-      _colorEnd = colorsTheme(colorEnd, { colorUnit: "rgba", opacity: 0 })
+      _colorEnd = colorTheme(colorEnd, { opacity: 0 })
     }
 
     return `linear-gradient(to ${direction},

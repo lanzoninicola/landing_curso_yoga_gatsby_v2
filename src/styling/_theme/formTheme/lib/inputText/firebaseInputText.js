@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { colorsTheme } from "@theme/index"
+import { colorTheme } from "@colors/lib"
 import { Space, Size } from "@layouts/index"
 import { useResponsiveSize } from "@hooks/index"
 
@@ -17,16 +17,16 @@ const FirebaseInputText = styled.input`
     return useResponsiveSize(fontSize)
   }};
   text-transform: lowercase;
-  color: ${() => colorsTheme("white")};
+  color: ${() => colorTheme("white")};
   background: transparent;
   padding: 0px 4px;
   border: 0;
-  border-bottom: ${() => `1px solid ${colorsTheme("orange")}`};
-  border-color: ${() => colorsTheme("orange")};
+  border-bottom: ${() => `1px solid ${colorTheme("orange")}`};
+  border-color: ${() => colorTheme("orange")};
   transition: border 0.15s cubic-bezier(0, 0, 0.2, 1);
 
   caret-color: ${() =>
-    colorsTheme("whitegray", { colorUnit: "rgba", opacity: "0.5" })};
+    colorTheme("whitegray", { colorUnit: "rgba", opacity: "0.5" })};
 
   &:focus {
     outline: none;

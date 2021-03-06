@@ -7,7 +7,7 @@ import DOMNodeCSSClassesList from "./DOMNodeCSSClassesList"
 import DOMNodeInspectContent from "./DOMNodeInspectContent"
 import useDOMInspect from "./useDOMInspect"
 
-import { colorsTheme } from "@theme/index"
+import { colorTheme } from "@colors/lib"
 import { useViewportInfo } from "@hooks/index"
 
 const StyledDOMNodeInspect = styled(motion.div)`
@@ -22,7 +22,7 @@ const StyledDOMNodeInspect = styled(motion.div)`
     if (tag === "flex") return `rgba(165, 42, 42, 0.9)`
     if (tag === "grid") return `rgba(42, 187, 155, 0.9)`
 
-    return colorsTheme("blue", { colorUnit: "rgba", opacity: "0.9" })
+    return colorTheme("blue", { opacity: "0.9" })
   }};
   border-radius: 5px;
 `

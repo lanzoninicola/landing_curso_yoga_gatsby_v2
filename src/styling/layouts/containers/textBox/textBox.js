@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 import { Size, FlexContainer } from "@layouts/index"
 import { composeCSSValue } from "@layouts/lib/index"
 import { isUndefined, warn } from "@utils/index"
@@ -10,8 +10,7 @@ const StyledTextBox = styled.div`
   ${Size}
   padding: ${({ p }) => p ?? `3px 10px 3px 10px`};
   background: ${({ bg, opacity }) => {
-    return colorsTheme(bg, {
-      colorUnit: "rgba",
+    return colorTheme(bg, {
       opacity: opacity ?? 1,
     })
   }};

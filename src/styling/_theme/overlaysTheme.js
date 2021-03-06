@@ -1,5 +1,5 @@
 import * as React from "react"
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 
 const overlaysTheme = () => {
   return {
@@ -8,18 +8,18 @@ const overlaysTheme = () => {
         bottomsheet: {},
       },
       bottomsheet: {
-        background: colorsTheme("blue", { colorUnit: "rgba", opacity: 0.95 }),
+        background: colorTheme("blue", { opacity: 0.95 }),
         backdropFilter: 10, // value in PX //
       },
       modalInner: {
-        background: colorsTheme("whitegray", {
+        background: colorTheme("whitegray", {
           colorUnit: "rgba",
           opacity: 0.3,
         }),
         backdropFilter: 10, // value in PX
       },
       modalCard: {
-        background: colorsTheme("whitegray", {
+        background: colorTheme("whitegray", {
           colorUnit: "rgba",
           opacity: 0.7,
         }),

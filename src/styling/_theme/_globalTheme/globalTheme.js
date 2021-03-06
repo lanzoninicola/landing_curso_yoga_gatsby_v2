@@ -6,7 +6,7 @@ import breakpointsTheme from "../breakpointsTheme/breakpointsTheme"
 import layoutTheme from "../layoutTheme/layoutTheme"
 import iconsTheme from "../iconsTheme/iconsTheme"
 import typographyTheme from "../typographyTheme"
-import { colorsTheme } from "@theme"
+import colorsTheme from "../colorsTheme/colorsTheme"
 import buttonTheme from "../buttonsTheme"
 import navbarTheme from "../navbarTheme/navbarTheme"
 import overlaysTheme from "../overlaysTheme"
@@ -16,7 +16,7 @@ import componentsTheme from "../componentsTheme/componentsTheme"
 export const theme = {
   company: companyTheme(),
   breakpoints: breakpointsTheme(),
-  colors: (color, options) => colorsTheme(color, options),
+  colors: colorsTheme(),
   typography: typographyTheme(),
   layout: layoutTheme(),
   icons: iconsTheme(),

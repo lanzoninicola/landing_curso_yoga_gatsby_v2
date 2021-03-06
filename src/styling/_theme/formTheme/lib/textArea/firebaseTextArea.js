@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { colorsTheme } from "@theme/index"
+import { colorTheme } from "@colors/lib"
 import { Space, Size } from "@layouts/index"
 import { useResponsiveSize } from "@hooks/index"
 
@@ -17,11 +17,11 @@ const FirebaseInputTextArea = styled.textarea`
     return useResponsiveSize(fontSize)
   }};
   padding: 0px 4px;
-  color: ${() => colorsTheme("white")};
+  color: ${() => colorTheme("white")};
   border: 0;
-  border-bottom: ${() => `1px solid ${colorsTheme("orange")}`};
+  border-bottom: ${() => `1px solid ${colorTheme("orange")}`};
   background: transparent;
-  border-color: ${() => colorsTheme("orange")};
+  border-color: ${() => colorTheme("orange")};
   resize: none;
 
   &:focus {

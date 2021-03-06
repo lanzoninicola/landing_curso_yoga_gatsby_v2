@@ -1,11 +1,11 @@
-import { colorsTheme } from "@theme"
+import { colorTheme } from "@colors/lib"
 
 const navbarMobileLayout = () => {
   const layout = {
     container: {
       width: "100vw",
       height: 70,
-      background: colorsTheme("white", { colorUnit: "rgb", opacity: 0 }),
+      background: colorTheme("white", { colorUnit: "rgb", opacity: 0 }),
     },
     navItem: {
       icon: {
@@ -24,27 +24,27 @@ const navbarMobileLayout = () => {
         size: 12, // value in PX
         lineHeight: 12, // value in PX
         color: {
-          default: colorsTheme("blue"),
-          hovered: colorsTheme("blue"),
+          default: colorTheme("blue"),
+          hovered: colorTheme("blue"),
           spotligthed: {
-            orange: colorsTheme("orange"),
-            green: colorsTheme("green"),
+            orange: colorTheme("orange"),
+            green: colorTheme("green"),
           },
         },
       },
       effects: {
         hover: {
-          borderTop: `4px solid ${colorsTheme("green")}`,
+          borderTop: `4px solid ${colorTheme("green")}`,
           transform: `scale(1.1)`,
         },
         framerMotion: {
           hover: {
             scale: 1.2,
-            borderTop: `4px solid ${colorsTheme("green")}`,
+            borderTop: `4px solid ${colorTheme("green")}`,
           },
           tap: {
             scale: 1.3,
-            borderTop: `4px solid ${colorsTheme("green")}`,
+            borderTop: `4px solid ${colorTheme("green")}`,
           },
         },
       },

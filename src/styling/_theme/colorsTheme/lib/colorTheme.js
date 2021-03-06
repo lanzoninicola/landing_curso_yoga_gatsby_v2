@@ -36,7 +36,7 @@ const colorTheme = (color, options = { opacity: 1 }) => {
     return `rgba(${themeColor[color]["rgb"]}, ${options.opacity})`
   }
 
-  return colors[color]["hex"]
+  return themeColor[color]["hex"]
 }
 
 export default colorTheme
