@@ -49,7 +49,7 @@ const buttonTheme = () => {
         background: {
           default: colorTheme("green"),
           onFocus: colorTheme("green"),
-          onHover: colorTheme("greenLight"),
+          onHover: colorTheme("lightgreen"),
         },
         labelColor: {
           default: colorTheme("blue"),
@@ -66,7 +66,7 @@ const buttonTheme = () => {
         background: {
           default: colorTheme("yellow"),
           onFocus: colorTheme("yellow"),
-          onHover: colorTheme("yellowLight"),
+          onHover: colorTheme("lightyellow"),
         },
         labelColor: {
           default: colorTheme("blue"),

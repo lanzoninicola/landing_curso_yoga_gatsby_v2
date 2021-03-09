@@ -1,6 +1,6 @@
 import * as React from "react"
 
-// https://stackoverflow.com/questions/60824250/hide-and-show-modal-on-mouseenter-and-mouseleave-using-react-hooks
+// https://stackoverflow.com/faqs/60824250/hide-and-show-modal-on-mouseenter-and-mouseleave-using-react-hooks
 const useHover = hoverEffects => {
   const ref = React.useRef()
   const _ref = React.useRef()

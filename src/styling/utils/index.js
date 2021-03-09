@@ -29,6 +29,7 @@ import objectKeys from "./objectKeys"
 import removePropsFromObject from "./removePropsFromObject"
 import randomItemFromArray from "./randomItemFromArray"
 import isBoolean from "./isBoolean"
+import paginator from "./paginator"
 
 export {
   left,
@@ -64,4 +65,5 @@ export {
   removePropsFromObject,
   randomItemFromArray,
   isBoolean,
+  paginator,
 }

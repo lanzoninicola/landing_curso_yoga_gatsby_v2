@@ -12,8 +12,10 @@ const StyledPancakeStack = styled.div`
   ${props => props.$style ?? {}}
 `
 
-const PancakeStack = ({ children, ...props }) => (
-  <StyledPancakeStack {...props}>{children}</StyledPancakeStack>
-)
+const PancakeStack = React.forwardRef(({ children, ...props }, ref) => (
+  <StyledPancakeStack ref={ref} {...props}>
+    {children}
+  </StyledPancakeStack>
+))
 
 export default PancakeStack

@@ -1,8 +1,8 @@
-import { composeCSSValue, breakpointsDesignSpec } from "@layouts/lib/index"
+import * as React from "react"
 
+import { composeCSSValue, breakpointsDesignSpec } from "@layouts/lib/index"
 import { useViewportInfo } from "@hooks"
 import { isObject } from "@utils/index"
-import React from "react"
 
 // INSPIRATION
 // https://blog.typekit.com/2016/08/17/flexible-typography-with-css-locks/

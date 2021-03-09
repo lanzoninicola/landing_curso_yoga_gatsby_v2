@@ -38,6 +38,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         "@shape": path.resolve(__dirname, "src/styling/shape/"),
         "@typography": path.resolve(__dirname, "src/styling/typography/"),
         "@cards": path.resolve(__dirname, "src/styling/cards/"),
+        "@interactive": path.resolve(__dirname, "src/styling/interactive/"),
         "@widget": path.resolve(__dirname, "src/styling/widget/"),
         "@utils": path.resolve(__dirname, "src/styling/utils/"),
         "@theme": path.resolve(__dirname, "src/styling/_theme/"),

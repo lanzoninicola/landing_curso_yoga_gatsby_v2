@@ -1,7 +1,7 @@
 import * as React from "react"
 import Flex from "./flex"
 
-const FlexContainer = ({ children, ...props }) => {
+const FlexContainer = React.forwardRef(({ children, ...props }, ref) => {
   /**
   This is not always true
 
@@ -22,9 +22,11 @@ const FlexContainer = ({ children, ...props }) => {
 
   return (
     <>
-      <Flex {...props}>{children}</Flex>
+      <Flex ref={ref} {...props}>
+        {children}
+      </Flex>
     </>
   )
-}
+})
 
 export default FlexContainer

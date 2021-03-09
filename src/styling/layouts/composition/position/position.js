@@ -1,12 +1,38 @@
 import { css } from "styled-components"
-import { isBoolean } from "@utils"
+import { isBoolean, isUndefined, warn } from "@utils"
 
 const Position = css`
-  position: ${({ relative, absolute, fixed, sticky }) => {
+  position: ${({
+    relative,
+    absolute,
+    fixed,
+    sticky,
+    h,
+    height,
+    h100,
+    h100v,
+    hAuto,
+    hFixed,
+  }) => {
     if (relative) return `relative`
     if (absolute) return `absolute`
     if (fixed) return `fixed`
-    if (sticky) return `sticky`
+    if (sticky) {
+      if (
+        isUndefined(hFixed) &&
+        isUndefined(h) &&
+        isUndefined(height) &&
+        isUndefined(h100) &&
+        isUndefined(h100v) &&
+        isUndefined(hAuto)
+      ) {
+        warn(
+          "Position",
+          'You have selected "position: sticky", I recommend you use the "hFixed" prop in the container'
+        )
+      }
+      return `sticky`
+    }
 
     return `relative`
   }};

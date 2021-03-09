@@ -19,4 +19,4 @@ MapComponents.propTypes = {
 
 export default MapComponents
 
-// <arrayMap through={array} Render={()=><CarouselSlideCard>{children}</CarouselSlideCard>}
+// <arrayMap through={array} Render={()=><CarouselCard>{children}</CarouselCard>}

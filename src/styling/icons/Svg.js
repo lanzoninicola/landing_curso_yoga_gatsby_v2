@@ -1,5 +1,6 @@
 import * as React from "react"
 import PropTypes from "prop-types"
+import { motion } from "framer-motion"
 import { isUndefined, error } from "@utils"
 
 const Svg = ({ sourcePath, color, size, wSVG, hSVG, animation }) => {

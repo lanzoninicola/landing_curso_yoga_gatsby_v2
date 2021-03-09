@@ -9,7 +9,10 @@ import { isNotString, error } from "@utils"
 
 function isHEXColor(color) {
   if (isNotString(color)) {
-    return error("isHEXColor()", "Parameter must be a string")
+    return error(
+      "isHEXColor()",
+      `Parameter must be a string instead of: ${typeof color}`
+    )
   }
 
   return color.substring(0, 1) === "#"

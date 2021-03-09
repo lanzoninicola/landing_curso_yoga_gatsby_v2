@@ -11,8 +11,8 @@ const typographyTheme = () => {
         lineHeight: { mobile: 41, tablet: 52, laptop: 60 },
       },
       h2: {
-        fontSize: { mobile: 24, tablet: 32, laptop: 48 },
-        lineHeight: { mobile: 27, tablet: 35, laptop: 52 },
+        fontSize: { mobile: 36, tablet: 32, laptop: 48 },
+        lineHeight: { mobile: 38, tablet: 35, laptop: 52 },
       },
       h3: {
         fontSize: { mobile: 25, tablet: 31, laptop: 40 },

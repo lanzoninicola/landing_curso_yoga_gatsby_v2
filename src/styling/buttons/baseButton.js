@@ -13,10 +13,10 @@ const StyledButtonBase = styled.button`
   cursor: pointer;
 `
 
-const ButtonBase = React.forwardRef(({ children, ...props }, ref) => (
+const BaseButton = React.forwardRef(({ children, ...props }, ref) => (
   <StyledButtonBase ref={ref} w="215" h="50" {...props}>
     {children}
   </StyledButtonBase>
 ))
 
-export default ButtonBase
+export default BaseButton

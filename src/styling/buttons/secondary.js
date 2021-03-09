@@ -1,13 +1,13 @@
 import * as React from "react"
 import styled from "styled-components"
 
-import ButtonBase from "./buttonBase"
+import BaseButton from "./baseButton"
 
 import useHover from "../_hooks/useHover"
 
 //TODO refactor this organizing in dedicated folders
 
-const StyledButtonSecondaryGreen = styled(ButtonBase)`
+const StyledButtonSecondaryGreen = styled(BaseButton)`
   background: ${({ theme }) =>
     theme.button?.secondary?.green?.background.default};
 
@@ -17,7 +17,7 @@ const StyledButtonSecondaryGreen = styled(ButtonBase)`
       : theme.button?.secondary?.green?.labelColor.default};
 `
 
-const StyledButtonSecondaryYellow = styled(ButtonBase)`
+const StyledButtonSecondaryYellow = styled(BaseButton)`
   background: ${({ theme }) => {
     return theme.button?.secondary?.yellow?.background.default
   }};

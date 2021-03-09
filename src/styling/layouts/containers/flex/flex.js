@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
 import { Space, Size, Position } from "@layouts/index"
+import { isColorTheme, colorTheme } from "@colors/lib"
 
 const Flex = styled(motion.div)`
   ${Space}
@@ -46,6 +47,13 @@ const Flex = styled(motion.div)`
     if (column) return `column`
     if (direction === "column") return `column` // it will deprecated
     return `column`
+  }};
+  background: ${({ bg }) => {
+    if (bg) {
+      if (isColorTheme(bg)) return colorTheme(bg)
+      return bg
+    }
+    return null
   }};
   ${props => props.$style ?? {}}
 `

@@ -40,7 +40,7 @@ const colorsTheme = (color, options = { colorUnit: "hex", opacity: 1 }) => {
       hex: "#41E2BA",
       rgb: "65,226,186",
     },
-    greenLight: {
+    lightgreen: {
       hex: "#41e2ba",
       rgb: "65,226,186",
     },
@@ -48,7 +48,7 @@ const colorsTheme = (color, options = { colorUnit: "hex", opacity: 1 }) => {
       hex: "#F7E733",
       rgb: "247,231,51",
     },
-    yellowLight: {
+    lightyellow: {
       hex: "#F7E733",
       rgb: "247,231,51",
     },

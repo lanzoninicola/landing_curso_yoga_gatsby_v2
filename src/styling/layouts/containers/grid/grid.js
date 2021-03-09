@@ -1,9 +1,11 @@
 import { css } from "styled-components"
+
 import { Space, Size, Position } from "@layouts/index"
-
 import { useResponsiveSize } from "@hooks/index"
+import { isFunction } from "@utils"
+import { isColorTheme, colorTheme } from "@colors/lib"
 
-// https://stackoverflow.com/questions/56651064/changing-tag-type-when-ealignXtending-component-in-styled-components
+// https://stackoverflow.com/faqs/56651064/changing-tag-type-when-ealignXtending-component-in-styled-components
 
 const Grid = css`
   ${Space}
@@ -30,7 +32,11 @@ const Grid = css`
   }};
   max-width: 100vw;
   background: ${({ bg }) => {
-    if (bg) return bg
+    if (bg) {
+      if (isFunction(bg)) return bg()
+      if (isColorTheme(bg)) return colorTheme(bg)
+      return bg
+    }
     return null
   }};
 `

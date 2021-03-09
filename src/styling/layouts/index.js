@@ -1,12 +1,11 @@
-import ViewportContext from "./viewport/viewportContext"
-import ViewportProvider from "./viewport/viewportProvider"
+import ViewportContext from "./context/viewport/viewportContext"
+import ViewportProvider from "./context/viewport/viewportProvider"
 
 import Space from "./composition/space/space"
 import Size from "./composition/size/size"
 import Position from "./composition/position/position"
 
 import FlexContainer from "./containers/flex/flexContainer"
-import FlexMotionContainer from "./containers/flex/flexMotionContainer"
 
 import GridFixedContainer from "./containers/grid/gridFixedContainer"
 import GridFluidContainer from "./containers/grid/gridFluidContainer"
@@ -37,7 +36,6 @@ export {
   PancakeStack,
   GridFixedContainer,
   GridFluidContainer,
-  FlexMotionContainer,
   Span,
   TextBox,
   HeaderFixedContainer,

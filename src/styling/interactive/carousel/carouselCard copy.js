@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 
 // import { motion } from "framer-motion"
-import { colorTheme } from "@colors/lib"
+import { isColorTheme, colorTheme } from "@colors/lib"
 import { FlexContainer, Space, Size } from "@layouts/index"
 
 // TODO: view if this component can be replaced by "ImageCard" component
@@ -13,25 +13,33 @@ const StyledCardWrapper = styled.div`
   ${Size}
   position: relative;
   min-width: 100%;
-  background: ${({ theme, bg }) => {
-    if (bg) return colorTheme(bg)
-    return theme?.components?.config?.carousel?.card?.background
+  border-radius: ${({ br }) => {
+    if (br) return br
+
+    return `25px`
   }};
-  border-radius: ${({ theme }) =>
-    theme?.components?.config?.carousel?.card?.borderRadius ?? `25px`};
+  background: ${({ bg }) => {
+    if (bg) {
+      if (isColorTheme(bg)) return colorTheme(bg)
+      return bg
+    }
+    return `white`
+  }};
   scroll-snap-align: center;
   ${({ $style }) => $style ?? {}}
 `
 
-const CarouselSlideCard = ({ children, ...props }) => {
+const CarouselCard = ({ children, ...props }) => {
+  const { width } = useViewportInfo()
+
   return (
     <FlexContainer column centerX stretchY $style={{ minWidth: "100%" }}>
       <StyledCardWrapper {...props}>{children}</StyledCardWrapper>
     </FlexContainer>
   )
 }
-export default CarouselSlideCard
+export default CarouselCard
 
-CarouselSlideCard.propTypes = {
+CarouselCard.propTypes = {
   children: PropTypes.node.isRequired,
 }

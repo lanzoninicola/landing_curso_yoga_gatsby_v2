@@ -5,14 +5,14 @@ import { useViewportScroll, useTransform, motion } from "framer-motion"
 import { SizedBox, GridFixedContainer } from "@layouts"
 import { useViewportInfo } from "@hooks"
 import { Text } from "@typography"
-import { ButtonBase } from "@buttons"
+import { BaseButton } from "@buttons"
 
 const ClassDateCTA = () => {
   const { scrollYProgress } = useViewportScroll()
   // const frameOpacity = useTransform(scrollYProgress, [0.196, 0.198], [0, 1])
   const frameScale = useTransform(scrollYProgress, [0, 0.1], [0, 1])
 
-  console.log(scrollYProgress)
+  // console.log(scrollYProgress)
 
   return (
     <GridFixedContainer
@@ -47,7 +47,7 @@ const ClassDateCTA = () => {
           marcar a data de 12 de abril para participar do curso
         </Text>
 
-        <ButtonBase>adicione ao seu calendário</ButtonBase>
+        <BaseButton>adicione ao seu calendário</BaseButton>
       </GridFixedContainer>
     </GridFixedContainer>
   )

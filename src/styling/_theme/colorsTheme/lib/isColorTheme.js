@@ -7,7 +7,10 @@ import { isNotUndefined, isNotString, error } from "@utils"
 
 function isColorTheme(color) {
   if (isNotString(color)) {
-    return error("isColorTheme()", "Parameter must be a string")
+    return error(
+      "isColorTheme()",
+      `Parameter "color" must be a string, instead of: ${typeof color}`
+    )
   }
 
   const themeColor = colorsTheme()

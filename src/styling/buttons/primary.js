@@ -1,12 +1,12 @@
 import * as React from "react"
 import styled from "styled-components"
-import ButtonBase from "./buttonBase"
+import BaseButton from "./baseButton"
 
 import useHover from "../_hooks/useHover"
 
 // TODO: make naming more generic
 // TODO: build a sort of state style (default, hover, onClick, focus) for button template
-const StyledPrimaryButtonBlue = styled(ButtonBase)`
+const StyledPrimaryButtonBlue = styled(BaseButton)`
   background: ${({ theme }) => {
     return theme.button?.primary?.blue?.background.default
   }};
@@ -18,7 +18,7 @@ const StyledPrimaryButtonBlue = styled(ButtonBase)`
   }};
 `
 
-const StyledPrimaryButtonOrange = styled(ButtonBase)`
+const StyledPrimaryButtonOrange = styled(BaseButton)`
   background: ${({ theme }) => {
     return theme.button?.primary?.orange?.background.default
   }};
