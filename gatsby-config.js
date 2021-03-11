@@ -18,9 +18,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `splashScreen`,
-        path: `${__dirname}/src/images/splashScreen`,
+        name: `heroBackground`,
+        path: `${__dirname}/src/images/heroBackground`,
       },
+      // resolve: `gatsby-source-filesystem`,
+      // options: {
+      //   name: `splashScreen`,
+      //   path: `${__dirname}/src/images/splashScreen`,
+      // },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

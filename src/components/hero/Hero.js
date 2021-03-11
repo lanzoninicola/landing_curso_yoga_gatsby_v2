@@ -1,40 +1,69 @@
 import * as React from "react"
-import { motion } from "framer-motion"
+import { useStaticQuery, graphql } from "gatsby"
 
-import { GridFixedContainer, FlexContainer, SizedBox, Sticky } from "@layouts"
+import { GridFixedContainer, SizedBox } from "@layouts"
 import { useViewportInfo } from "@hooks"
-import { SVGIcon } from "@icons"
-import { Bouncer } from "@animations"
-
-import HeroTagLine from "./HeroTagLine"
-
-const ArrowBottom = () => {
-  const reveal = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-    },
-  }
-  return (
-    <FlexContainer row h100 w100 top right pr="32">
-      <motion.div variants={reveal} initial="hidden" animate="visible">
-        <Bouncer>
-          <SVGIcon name="ARROW_BOTTOM" size="48" />
-        </Bouncer>
-      </motion.div>
-    </FlexContainer>
-  )
-}
+import { ImageQL } from "@images"
 
 const Hero = () => {
-  const { height } = useViewportInfo()
-  const [showArrow, setShowArrow] = React.useState(false)
+  const { device, height } = useViewportInfo()
+  const data = useStaticQuery(graphql`
+    query HeroImage {
+      laptop: allFile(
+        filter: { sourceInstanceName: { eq: "heroBackground" } }
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+                originalName
+              }
+            }
+          }
+        }
+      }
+      tablet: allFile(
+        filter: { sourceInstanceName: { eq: "heroBackground" } }
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+                originalName
+              }
+            }
+          }
+        }
+      }
+      mobile: allFile(
+        filter: { sourceInstanceName: { eq: "heroBackground" } }
+      ) {
+        edges {
+          node {
+            relativePath
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
+                originalName
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  console.log(data)
 
   return (
     <>
       <GridFixedContainer
         as="section"
-        columns="0.25fr 1fr"
+        columns="1fr 0.1fr"
         rows="1fr"
         h={height}
         hFixed
@@ -45,13 +74,9 @@ const Hero = () => {
         pb="16"
         sticky
       >
-        <SizedBox />
-        <GridFixedContainer columns="1fr" rows="1fr 1fr" h100 w100 centerY>
-          <FlexContainer row h100 w100 bottom>
-            <HeroTagLine showArrow={setShowArrow} />
-          </FlexContainer>
-          {showArrow && <ArrowBottom />}
-        </GridFixedContainer>
+        <ImageQL data={data} />
+
+        <div></div>
       </GridFixedContainer>
     </>
   )

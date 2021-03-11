@@ -7,6 +7,7 @@ import { FlexContainer } from "@layouts"
 import { CarouselContainer, BaseCardWrapper } from "@interactive"
 import { paginator } from "@utils"
 import { BaseButton } from "@buttons"
+import { Bouncer } from "@animations"
 import useDeepCompareEffect from "use-deep-compare-effect"
 
 const data = [
@@ -78,25 +79,41 @@ export const ClassDetailsCarousel = ({
   showArrows,
   infinite,
 }) => {
-  const { width, device } = useViewportInfo()
+  // const { width, device } = useViewportInfo()
   const { paginatedItems, goNextPage, goPrevPage, slideItemRef } = useSlider({
     items: data,
     itemsPerPage: 4,
-    device,
   })
 
   return (
     <>
-      <CarouselContainer bg="whitegray">
-        {paginatedItems?.map((item, index) => {
-          return (
-            <BaseCardWrapper ref={slideItemRef} key={index} gap="96">
-              <Title as="h3">{item.title}</Title>
-              <Text>{item.text}</Text>
-            </BaseCardWrapper>
-          )
-        })}
-      </CarouselContainer>
+      <Bouncer startX="0" endX="-5" duration="2" stopOnHover>
+        <CarouselContainer
+          ml="32"
+          mr="32"
+          style={{
+            overflowX: "hidden",
+          }}
+        >
+          {paginatedItems?.map((item, index) => {
+            return (
+              <BaseCardWrapper key={index} ref={slideItemRef} gap="96">
+                <Title as="h3">{item.title}</Title>
+                <Text>{item.text}</Text>
+              </BaseCardWrapper>
+            )
+          })}
+          <div
+            style={{
+              marginLeft: "-20px",
+              transform: "rotate(90deg)",
+              border: "1px solid black",
+            }}
+          >
+            Hello World
+          </div>
+        </CarouselContainer>
+      </Bouncer>
       {/* // using buttons */}
       <FlexContainer row centerX>
         <BaseButton onClick={goPrevPage}>Prev Page</BaseButton>

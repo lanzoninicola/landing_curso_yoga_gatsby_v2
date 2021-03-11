@@ -16,11 +16,14 @@ function useSlider({ items = [], itemsPerPage = 1 }) {
     paginator({ items, itemsPerPage, device })
   )
 
-  const getItemsPerPage = React.useCallback(() => {
+  React.useEffect(() => {
+    calculateNumberOfItemsPerPage()
+  }, [width, calculateNumberOfItemsPerPage])
+
+  const calculateNumberOfItemsPerPage = React.useCallback(() => {
     let _itemsPerPage = itemsPerPage
     if (slideItemRef.current) {
       _itemsPerPage = Math.floor(width / slideItemRef.current.offsetWidth)
-      console.log(width, slideItemRef, slideItemRef.current.clientWidth)
     }
     setPageData(() => {
       const nextPageData = paginator({
@@ -30,10 +33,6 @@ function useSlider({ items = [], itemsPerPage = 1 }) {
       return nextPageData
     })
   }, [width, device, items, itemsPerPage])
-
-  React.useEffect(() => {
-    getItemsPerPage()
-  }, [width, getItemsPerPage])
 
   function handlePrevPage() {
     const prevPage = pageData?.prevPage === null ? 1 : pageData?.prevPage
