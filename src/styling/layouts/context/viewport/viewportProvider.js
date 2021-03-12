@@ -32,8 +32,8 @@ const ViewportProvider = ({ children }) => {
     }
 
     setViewportInfo(nextViewportInfo)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    //-- // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [viewportInfo.diagonal])
 
   const resizeStop = React.useCallback(() => {
     if (isDomAvailable) {

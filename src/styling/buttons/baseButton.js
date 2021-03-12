@@ -1,9 +1,10 @@
 import * as React from "react"
 import styled from "styled-components"
-import { Size } from "@layouts"
+import { Size, Space } from "@layouts"
 
 const StyledButtonBase = styled.button`
   ${Size}
+  ${Space}
   position: relative;
   border: none;
   border-radius: 50px;
@@ -14,7 +15,7 @@ const StyledButtonBase = styled.button`
 `
 
 const BaseButton = React.forwardRef(({ children, ...props }, ref) => (
-  <StyledButtonBase ref={ref} w="215" h="50" {...props}>
+  <StyledButtonBase ref={ref} w="215" h="50" mt="16" wFixed hFixed {...props}>
     {children}
   </StyledButtonBase>
 ))

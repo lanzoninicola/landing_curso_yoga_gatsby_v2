@@ -1,4 +1,4 @@
-import faqsModel from "../models/faqs"
+import { faqsModel } from "@data"
 
 const faqsEntity = () => {
   return faqsModel.map(item => {

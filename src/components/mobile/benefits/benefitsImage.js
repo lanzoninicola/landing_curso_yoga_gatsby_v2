@@ -5,11 +5,11 @@ import { motion } from "framer-motion"
 import { ImageQL } from "@images"
 import { useViewportInfo } from "@hooks"
 
-const HeroImage = () => {
+const BenefitsImage = () => {
   const { device } = useViewportInfo()
   const data = useStaticQuery(graphql`
-    query SplashScreenImage {
-      laptop: allFile(filter: { sourceInstanceName: { eq: "splashScreen" } }) {
+    query BenefitsImage {
+      laptop: allFile(filter: { sourceInstanceName: { eq: "core" } }) {
         edges {
           node {
             relativePath
@@ -22,7 +22,7 @@ const HeroImage = () => {
           }
         }
       }
-      tablet: allFile(filter: { sourceInstanceName: { eq: "splashScreen" } }) {
+      tablet: allFile(filter: { sourceInstanceName: { eq: "core" } }) {
         edges {
           node {
             relativePath
@@ -35,7 +35,7 @@ const HeroImage = () => {
           }
         }
       }
-      mobile: allFile(filter: { sourceInstanceName: { eq: "splashScreen" } }) {
+      mobile: allFile(filter: { sourceInstanceName: { eq: "core" } }) {
         edges {
           node {
             relativePath
@@ -60,21 +60,33 @@ const HeroImage = () => {
       },
     },
     visible: {
-      x: device === "laptop" ? -450 : -230,
-      opacity: 0.5,
+      x: device === "laptop" ? -450 : 50,
+      opacity: 0.1,
     },
   }
+
+  console.log(data)
 
   return (
     <motion.div
       variants={imageAnimation}
       initial="hidden"
       animate="visible"
-      style={{ height: "100%", width: "150%", position: "absolute" }}
+      style={{
+        height: "100%",
+        width: "150%",
+        position: "absolute",
+      }}
     >
-      <ImageQL data={data} alt="Mulher em posiçao facil" />
+      <ImageQL
+        data={data}
+        alt="Mulher em posiçao facil"
+        style={{
+          overflowX: "hidden",
+        }}
+      />
     </motion.div>
   )
 }
 
-export default HeroImage
+export default BenefitsImage

@@ -6,7 +6,7 @@ import setGatsbyFluidData from "../lib/setGatsbyFluidData"
 import BackgroundImage from "gatsby-background-image"
 import { Size } from "@layouts"
 
-const BackgroundImg = ({ data, device, children }) => {
+const BaseBackgroundImg = ({ data, device, children }) => {
   return (
     <BackgroundImage fluid={setGatsbyFluidData(data, device)}>
       {children}
@@ -14,16 +14,25 @@ const BackgroundImg = ({ data, device, children }) => {
   )
 }
 
-BackgroundImg.propTypes = {
+BaseBackgroundImg.propTypes = {
   data: PropTypes.object.isRequired,
+  device: PropTypes.string,
   children: PropTypes.node.isRequired,
 }
 
-const StyledBackgroundImg = styled(BackgroundImg)`
+const StyledBackgroundImg = styled(BaseBackgroundImg)`
   ${Size}
   background-position: bottom center;
   background-repeat: repeat-y;
   background-size: cover;
 `
 
-export default StyledBackgroundImg
+const BackgroundImg = ({ children, ...props }) => {
+  return (
+    <StyledBackgroundImg h100 w100 {...props}>
+      {children}
+    </StyledBackgroundImg>
+  )
+}
+
+export default BackgroundImg

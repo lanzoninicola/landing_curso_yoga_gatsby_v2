@@ -42,6 +42,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         "@widget": path.resolve(__dirname, "src/styling/widget/"),
         "@utils": path.resolve(__dirname, "src/styling/utils/"),
         "@theme": path.resolve(__dirname, "src/styling/_theme/"),
+        "@domain": path.resolve(__dirname, "src/domains/entities/"),
+        "@data": path.resolve(__dirname, "src/data/models/"),
       },
     },
   })

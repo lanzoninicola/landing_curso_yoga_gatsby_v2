@@ -47,7 +47,7 @@ export default function useResponsiveSize(
 
   React.useEffect(() => {
     getResponsiveSize()
-  }, [currentViewportDiagonal, getResponsiveSize])
+  }, [currentViewportDiagonal])
 
   return `${responsiveSize}px`
 }

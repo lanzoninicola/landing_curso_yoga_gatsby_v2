@@ -32,14 +32,23 @@ export default function setGatsbyFluidData(
   if (hasDataBreakpointInfo) {
     const edgesArray = graphQLData?.[currentDevice]?.edges
 
-    if (graphQLData?.[currentDevice]?.edges.length > 1) {
+    if (edgesArray.length === 0) {
+      warn(
+        `setGatsbyFluidData`,
+        `The GraphQL query returns nothing: ${JSON.stringify(
+          edgesArray
+        )}. Please check your query, configuration. Are you imported the component correctly?.`
+      )
+    }
+
+    if (edgesArray.length > 1) {
       warn(
         `setGatsbyFluidData`,
         `The GraphQL query returns more than 1 item. Maybe you need to map the result or check the filter applied to the GraphQL query.`
       )
     }
 
-    return edgesArray[0].node?.childImageSharp?.fluid
+    return edgesArray[0]?.node?.childImageSharp?.fluid
   }
 
   /**

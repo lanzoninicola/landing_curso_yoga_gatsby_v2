@@ -27,12 +27,16 @@ export default function useSizePerDevice(size = {}, debug = false) {
   }
 
   const getSizePerDevice = React.useCallback(() => {
-    const _userSize = size[currentDeviceFormFactor]
-    const { value: userSize, unit: userUnit } = composeCSSValue(_userSize)
+    let _responsiveSize
 
-    if (userUnit !== "px" || userUnit !== "PX") exitNoChanges()
+    if (currentDeviceFormFactor) {
+      const _userSize = size[currentDeviceFormFactor]
+      const { value: userSize, unit: userUnit } = composeCSSValue(_userSize)
 
-    const _responsiveSize = userSize
+      if (userUnit !== "px" || userUnit !== "PX") exitNoChanges()
+
+      _responsiveSize = userSize
+    }
 
     setResponsiveSize(_responsiveSize)
   }, [currentDeviceFormFactor, size])

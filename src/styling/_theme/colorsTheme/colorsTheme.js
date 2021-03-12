@@ -7,6 +7,7 @@
 const colorsTheme = () => {
   const themeColors = {
     purple: "#A4347E",
+    blue: "#058EC5",
   }
 
   const baseColors = {

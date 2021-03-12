@@ -3,18 +3,15 @@ import * as React from "react"
 import { GridFluidContainer } from "@layouts"
 import { useViewportInfo } from "@hooks"
 import { Title } from "@typography"
+import { faqsEntity } from "@domain"
 
 import FaqMobile from "./FaqMobile"
 import FaqLaptop from "./FaqLaptop"
-
-import faqsEntity from "./entities/faqs"
 
 const faqs = faqsEntity()
 
 const Faq = () => {
   const { device } = useViewportInfo()
-
-  console.log(device)
 
   return (
     <GridFluidContainer
