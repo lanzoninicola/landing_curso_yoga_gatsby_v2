@@ -1,10 +1,11 @@
 import styled from "styled-components"
 import { motion } from "framer-motion"
-import { Space, Size, Position } from "@layouts/index"
+import { Margins, Paddings, Size, Position } from "@layouts/index"
 import { isColorTheme, colorTheme } from "@colors/lib"
 
 const Flex = styled(motion.div)`
-  ${Space}
+  ${Margins} 
+  ${Paddings}
   ${Size}
   ${Position}
   display: flex;

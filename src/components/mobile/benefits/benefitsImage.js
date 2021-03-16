@@ -53,19 +53,15 @@ const BenefitsImage = () => {
 
   const imageAnimation = {
     hidden: {
-      x: 0,
       opacity: 1,
       transition: {
         duration: 3,
       },
     },
     visible: {
-      x: device === "laptop" ? -450 : 50,
       opacity: 0.1,
     },
   }
-
-  console.log(data)
 
   return (
     <motion.div
@@ -73,18 +69,14 @@ const BenefitsImage = () => {
       initial="hidden"
       animate="visible"
       style={{
-        height: "100%",
+        height: "50%",
         width: "150%",
+        top: 0,
         position: "absolute",
+        maxWidth: "100%",
       }}
     >
-      <ImageQL
-        data={data}
-        alt="Mulher em posiçao facil"
-        style={{
-          overflowX: "hidden",
-        }}
-      />
+      <ImageQL data={data} alt="Mulher em posiçao facil" />
     </motion.div>
   )
 }

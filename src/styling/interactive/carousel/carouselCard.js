@@ -5,12 +5,13 @@ import styled from "styled-components"
 // import { motion } from "framer-motion"
 import { useViewportInfo } from "@hooks"
 import { isColorTheme, colorTheme } from "@colors/lib"
-import { FlexContainer, Space, Size } from "@layouts/index"
+import { FlexContainer, Margins, Paddings, Size } from "@layouts/index"
 
 // TODO: view if this component can be replaced by "ImageCard" component
 
 const StyledCardWrapper = styled.div`
-  ${Space}
+  ${Margins}
+  ${Paddings}
   ${Size}
   box-sizing: border-box;
   position: relative;

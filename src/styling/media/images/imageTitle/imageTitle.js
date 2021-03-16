@@ -1,7 +1,7 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { FlexContainer, Space } from "@layouts/index"
+import { FlexContainer, Margins, Paddings } from "@layouts/index"
 import { composeCSSValue } from "@layouts/lib/index"
 import { Title } from "@typography/index"
 import { colorTheme } from "@colors/lib"
@@ -12,7 +12,8 @@ import { colorTheme } from "@colors/lib"
  */
 
 const StyledImageTitle = styled.div`
-  ${Space}
+  ${Margins}
+  ${Paddings}
   background: ${({ bg }) => {
     if (bg) return bg
 

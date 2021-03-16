@@ -1,7 +1,9 @@
 import ViewportContext from "./context/viewport/viewportContext"
 import ViewportProvider from "./context/viewport/viewportProvider"
 
-import Space from "./composition/space/space"
+import { Margins, Margin } from "./composition/margin/margin"
+import { Paddings, Padding } from "./composition/padding/padding"
+
 import Size from "./composition/size/size"
 import Position from "./composition/position/position"
 
@@ -29,7 +31,10 @@ import HeaderScrollContainer from "./composition/header/headerScrollContainer"
 export {
   ViewportContext,
   ViewportProvider,
-  Space,
+  Paddings,
+  Padding,
+  Margins,
+  Margin,
   Size,
   Position,
   FlexContainer,

@@ -9,6 +9,8 @@ import { Title } from "@typography"
 
 import { BaseButton, OutlineButton } from "@buttons"
 
+import HeroBackground from "./HeroBackground"
+
 const GradientLayer1 = styled.div`
   position: absolute;
   height: 100%;
@@ -24,25 +26,6 @@ const GradientLayer1 = styled.div`
 
 const Hero = () => {
   const { device, height, width } = useViewportInfo()
-  const data = useStaticQuery(graphql`
-    query HeroMobile {
-      mobile: allFile(filter: { sourceInstanceName: { eq: "mobile" } }) {
-        edges {
-          node {
-            relativePath
-            childImageSharp {
-              fluid(maxWidth: 375, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-                originalName
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  console.log(width)
 
   return (
     <>
@@ -57,7 +40,7 @@ const Hero = () => {
         hFixed
         sticky
       >
-        <BackgroundImg data={data} device={device} h={height}>
+        <HeroBackground>
           <GradientLayer1 />
           <GridFixedContainer
             h={height}
@@ -80,7 +63,7 @@ const Hero = () => {
               <OutlineButton>Agenda no teu calendario</OutlineButton>
             </SizedBox>
           </GridFixedContainer>
-        </BackgroundImg>
+        </HeroBackground>
       </GridFixedContainer>
     </>
   )

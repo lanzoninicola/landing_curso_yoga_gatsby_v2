@@ -4,12 +4,13 @@ import styled from "styled-components"
 
 // import { motion } from "framer-motion"
 import { colorTheme } from "@colors/lib"
-import { Space, Size } from "@layouts/index"
+import { Margins, Paddings, Size } from "@layouts/index"
 import { ImageTitle, ImageQL } from "@images/index"
 // import {SVGIcon} from "@icons/index"
 
 const StyledImageCard = styled.div`
-  ${Space}
+  ${Margins}
+  ${Paddings}
   ${Size}
   position: relative;
   background: ${({ card }) => {

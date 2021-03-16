@@ -11,14 +11,14 @@ import { isObject, error } from "@utils"
  *  This hook works only with PXs value
  */
 
-export default function useSizePerDevice(size = {}, debug = false) {
+export default function useDeviceSize(size = {}, debug = false) {
   const [responsiveSize, setResponsiveSize] = React.useState()
   const { device: currentDeviceFormFactor } = useViewportInfo()
 
-  if (!isObject) {
+  if (!isObject(size)) {
     error(
-      `useSizePerDevice()`,
-      `The size passed as parameter must be an object, instead of: ${typeof size}`
+      `useDeviceSize()`,
+      `The size passed as parameter must be an object, instead of: ${typeof size}. You must define the size for each breakpoints: mobile, tablet, laptop.`
     )
   }
 

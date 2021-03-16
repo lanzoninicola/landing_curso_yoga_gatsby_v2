@@ -1,11 +1,12 @@
 import styled from "styled-components"
 
 import { colorTheme } from "@colors/lib"
-import { Space, Size } from "@layouts/index"
+import { Margins, Paddings, Size } from "@layouts/index"
 import { useResponsiveSize } from "@hooks/index"
 
 const PrimaryTextArea = styled.textarea`
-  ${Space}
+  ${Margins}
+  ${Paddings}
   ${Size}
   font-family: ${({ theme }) => {
     const themeTypography = theme?.typography

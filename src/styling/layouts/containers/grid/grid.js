@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 
-import { Space, Size, Position } from "@layouts/index"
+import { Margins, Paddings, Size, Position } from "@layouts/index"
 import { useResponsiveSize } from "@hooks/index"
 import { isFunction } from "@utils"
 import { isColorTheme, colorTheme } from "@colors/lib"
@@ -8,7 +8,8 @@ import { isColorTheme, colorTheme } from "@colors/lib"
 // https://stackoverflow.com/faqs/56651064/changing-tag-type-when-ealignXtending-component-in-styled-components
 
 const Grid = css`
-  ${Space}
+  ${Margins} 
+  ${Paddings}
   ${Size}
   ${Position}
   display: grid;

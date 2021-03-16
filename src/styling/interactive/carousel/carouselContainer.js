@@ -15,7 +15,6 @@ const CarouselContainer = ({ pl, pr, ml, mr, children, ...props }) => {
     <FlexContainer
       row
       centerX
-      h100
       // overflowAuto
       bg="white"
       style={{

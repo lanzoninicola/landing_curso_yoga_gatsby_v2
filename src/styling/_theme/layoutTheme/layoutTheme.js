@@ -16,6 +16,12 @@ function layoutTheme() {
 
       minDiagonal: 1190,
     },
+    space: {
+      paddingLeft: { laptop: 112, tablet: 112, mobile: 32 },
+      paddingRight: { laptop: 112, tablet: 112, mobile: 32 },
+      paddingTop: { laptop: 112, tablet: 112, mobile: 32 },
+      paddingBottom: { laptop: 112, tablet: 112, mobile: 32 },
+    },
     grid: {
       gap: {
         default: { mobile: 8, tablet: 16, laptop: 16 },

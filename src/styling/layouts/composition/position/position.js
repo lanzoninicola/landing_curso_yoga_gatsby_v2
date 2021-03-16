@@ -1,5 +1,5 @@
 import { css } from "styled-components"
-import { isBoolean, isUndefined, warn } from "@utils"
+import { isBoolean, isUndefined, isNotUndefined, warn } from "@utils"
 
 const Position = css`
   position: ${({
@@ -19,12 +19,12 @@ const Position = css`
     if (fixed) return `fixed`
     if (sticky) {
       if (
-        isUndefined(hFixed) &&
-        isUndefined(h) &&
-        isUndefined(height) &&
-        isUndefined(h100) &&
-        isUndefined(h100v) &&
-        isUndefined(hAuto)
+        (isNotUndefined(h) ||
+          isNotUndefined(height) ||
+          isNotUndefined(h100) ||
+          isNotUndefined(h100v) ||
+          isNotUndefined(hAuto)) &&
+        isUndefined(hFixed)
       ) {
         warn(
           "Position",

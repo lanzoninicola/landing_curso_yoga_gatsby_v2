@@ -1,60 +1,10 @@
-import { css } from "styled-components"
-import {
-  stringToArray,
-  arrayToString,
-  isNotString,
-  isString,
-} from "@utils/index"
+import * as React from "react"
+import styled, { css, ThemeContext } from "styled-components"
 
-import { useResponsiveSize } from "@hooks/index"
+import { useViewportInfo, useResponsiveSize } from "@hooks"
+import { stringToArray, arrayToString, isString } from "@utils/index"
 
-const Space = css`
-  margin-left: ${({ ml, marginLeft }) => {
-    const marginProp = ml ?? marginLeft
-    if (marginProp) return useResponsiveSize(marginProp)
-
-    return null
-  }};
-  margin-right: ${({ mr, marginRight }) => {
-    const marginProp = mr ?? marginRight
-    if (marginProp) return useResponsiveSize(marginProp)
-
-    return null
-  }};
-  margin-bottom: ${({ mb, marginBottom }) => {
-    const marginProp = mb ?? marginBottom
-    if (marginProp) return useResponsiveSize(marginProp)
-
-    return null
-  }};
-  margin-top: ${({ mt, marginTop }) => {
-    const marginProp = mt ?? marginTop
-    if (marginProp) return useResponsiveSize(marginProp)
-
-    return null
-  }};
-  margin: ${({ m, margin }) => {
-    if (m || margin) {
-      const marginProp = m ?? margin
-
-      if (isNotString(marginProp)) {
-        console.error(
-          `The property "m" or "margin" must be a string and not ${typeof marginProp}`
-        )
-        return null
-      }
-
-      const marginArray = stringToArray(marginProp, " ")
-
-      let newMarginArray = marginArray.map(marginValue => {
-        return useResponsiveSize(marginValue)
-      })
-
-      return arrayToString(newMarginArray)
-    }
-
-    return null
-  }};
+export const Paddings = css`
   padding-left: ${({ pl, paddingLeft }) => {
     const paddingProp = pl ?? paddingLeft
     if (paddingProp) return useResponsiveSize(paddingProp)
@@ -109,4 +59,30 @@ const Space = css`
     return null
   }};
 `
-export default Space
+
+const StyledPadding = styled.div`
+  ${Paddings}
+`
+
+export const Padding = React.forwardRef(({ children, ...props }, ref) => {
+  const themeContext = React.useContext(ThemeContext)
+  const { device } = useViewportInfo()
+  const layoutSpaceTheme = themeContext?.layout?.space
+  const themePaddingLeft = layoutSpaceTheme?.paddingLeft[device] ?? null
+  const themePaddingRight = layoutSpaceTheme?.paddingRight[device] ?? null
+  const themePaddingTop = layoutSpaceTheme?.paddingTop[device] ?? null
+  const themePaddingBottom = layoutSpaceTheme?.paddingBottom[device] ?? null
+
+  return (
+    <StyledPadding
+      ref={ref}
+      pl={themePaddingLeft}
+      pr={themePaddingRight}
+      pt={themePaddingTop}
+      pb={themePaddingBottom}
+      {...props}
+    >
+      {children}
+    </StyledPadding>
+  )
+})

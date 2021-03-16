@@ -1,14 +1,15 @@
 import { css } from "styled-components"
 import PropTypes from "prop-types"
 
-import Space from "../layouts/composition/space/space"
-import { useResponsiveSize } from "@hooks"
+import { Margins, Paddings } from "@layouts"
 import { getCurrentDeviceValue } from "@layouts/lib/index"
+import { useResponsiveSize } from "@hooks"
 import { isObject } from "@utils"
 import { colorTheme, isColorTheme } from "@colors/lib"
 
 const Typeface = css`
-  ${Space}
+  ${Margins}
+  ${Paddings}
   font-family: ${({ theme, variant }) => theme.typography[variant].family};
   font-style: ${({ italic }) => {
     if (italic) return `italic`

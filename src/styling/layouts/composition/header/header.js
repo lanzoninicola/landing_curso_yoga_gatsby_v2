@@ -1,10 +1,11 @@
 import * as React from "react"
 import styled from "styled-components"
-import { FlexContainer, Size, Space } from "@layouts/index"
+import { FlexContainer, Size, Margins, Paddings } from "@layouts/index"
 
 const StyledHeader = styled(FlexContainer)`
   ${Size}
-  ${Space}
+  ${Margins} 
+  ${Paddings}
 `
 
 const Header = props => {

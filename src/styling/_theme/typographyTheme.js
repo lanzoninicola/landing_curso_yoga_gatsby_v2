@@ -39,8 +39,8 @@ const typographyTheme = () => {
         lineHeight: { mobile: 28, tablet: 23, laptop: 27 },
       },
       small: {
-        fontSize: { mobile: 10, tablet: 10, laptop: 13 },
-        lineHeight: { mobile: 13, tablet: 13, laptop: 15 },
+        fontSize: { mobile: 20, tablet: 10, laptop: 13 },
+        lineHeight: { mobile: 24, tablet: 13, laptop: 15 },
       },
       // caption: a title or brief explanation appended to an illustration, cartoon, or poster.
       caption: {},

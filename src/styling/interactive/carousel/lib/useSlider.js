@@ -1,5 +1,5 @@
 import * as React from "react"
-import useViewportInfo from "./useViewportInfo"
+import useViewportInfo from "../../../_hooks/useViewportInfo"
 import { paginator, warn } from "@utils"
 
 function useSlider({ items = [], itemsPerPage = 1 }) {

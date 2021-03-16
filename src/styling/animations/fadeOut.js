@@ -1,12 +1,17 @@
 import * as React from "react"
 import { motion } from "framer-motion"
 
-const FadeOut = ({ children }) => {
+const FadeOut = ({ duration, children }) => {
   const reveal = {
     visible: {
       opacity: 1,
     },
-    hidden: { opacity: 0 },
+    hidden: {
+      opacity: 0,
+      transition: {
+        duration: duration,
+      },
+    },
   }
 
   return (
@@ -14,6 +19,10 @@ const FadeOut = ({ children }) => {
       {children}
     </motion.div>
   )
+}
+
+FadeOut.defaultProps = {
+  duration: 1,
 }
 
 export default FadeOut

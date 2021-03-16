@@ -26,6 +26,7 @@ const ClassDateCTA = () => {
       pt="56"
       gap="56"
       h="800px"
+      hFixed
       sticky
     >
       <SizedBox style={{ scale: frameScale, overflow: "hidden" }}>

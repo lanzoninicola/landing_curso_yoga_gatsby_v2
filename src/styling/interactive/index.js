@@ -1,6 +1,21 @@
 import BaseCardWrapper from "./carousel/wrappers/baseCardWrapper"
 
 import CarouselContainer from "./carousel/carouselContainer"
+import CarouselBaseContainer from "./carousel/container/carouselBaseContainer"
+import CarouselMobileContainer from "./carousel/container/carouselMobileContainer"
+
 import CarouselCard from "./carousel/carouselCard"
 
-export { CarouselContainer, CarouselCard, BaseCardWrapper }
+import CarouselChevron from "./navigators/chevron/chevron"
+
+import useSlider from "./carousel/lib/useSlider"
+
+export {
+  CarouselContainer,
+  CarouselBaseContainer,
+  CarouselMobileContainer,
+  CarouselCard,
+  BaseCardWrapper,
+  CarouselChevron,
+  useSlider,
+}

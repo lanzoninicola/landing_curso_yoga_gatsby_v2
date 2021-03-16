@@ -1,10 +1,11 @@
 import * as React from "react"
 import styled from "styled-components"
-import { Size, Space } from "@layouts"
+import { Size, Margins, Paddings } from "@layouts"
 
 const StyledButtonBase = styled.button`
   ${Size}
-  ${Space}
+  ${Margins}
+  ${Paddings}
   position: relative;
   border: none;
   border-radius: 50px;

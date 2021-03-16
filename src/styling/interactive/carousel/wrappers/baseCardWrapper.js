@@ -1,12 +1,51 @@
 import * as React from "react"
 import styled from "styled-components"
-import { useDeviceSize, useResponsiveSize } from "@hooks"
-import { Space } from "@layouts"
+import { FlexContainer } from "@layouts"
+import { useResponsiveSize } from "@hooks"
+import { Margins, Paddings } from "@layouts"
 import { composeCSSValue } from "@layouts/lib"
+import { isObject } from "@utils"
 
-const StyledBaseCardWrapper = styled.div`
-  ${Space}
-  height: 100%;
+const DEFAULT_HEIGHT_BREAKPOINTS = { laptop: 400, tablet: 400, mobile: 350 }
+const DEFAULT_WIDTH_BREAKPOINTS = { laptop: 200, tablet: 200, mobile: 250 }
+
+const StyledBaseCardWrapper = styled(FlexContainer)`
+  ${Margins}
+  ${Paddings}
+  height: ${({ h, height }) => {
+    const hProps = h ?? height
+    const sizeBreakpoints = {
+      laptop: hProps,
+      tablet: hProps,
+      mobile: hProps,
+    }
+
+    if (hProps) {
+      if (!isObject(hProps)) {
+        return useResponsiveSize(sizeBreakpoints)
+      }
+      return useResponsiveSize(hProps)
+    }
+
+    return useResponsiveSize(DEFAULT_HEIGHT_BREAKPOINTS)
+  }};
+  width: ${({ w, width }) => {
+    const wProps = w ?? width
+    const sizeBreakpoints = {
+      laptop: wProps,
+      tablet: wProps,
+      mobile: wProps,
+    }
+
+    if (wProps) {
+      if (!isObject(wProps)) {
+        return useResponsiveSize(sizeBreakpoints)
+      }
+      return useResponsiveSize(wProps)
+    }
+
+    return useResponsiveSize(DEFAULT_WIDTH_BREAKPOINTS)
+  }};
   border: none;
   border-radius: ${({ br }) => {
     if (br) return br
@@ -33,16 +72,11 @@ const StyledBaseCardWrapper = styled.div`
     if (gap) return `${value}${unit}`
     return null
   }};
-  width: ${({ w, width }) => {
-    if (w) return useDeviceSize(w)
-    if (width) return useDeviceSize(width)
-    return useDeviceSize({ laptop: 300, tablet: 300, mobile: 250 })
-  }};
 `
 
 const BaseCardWrapper = React.forwardRef(({ children, ...props }, ref) => {
   return (
-    <StyledBaseCardWrapper ref={ref} {...props}>
+    <StyledBaseCardWrapper column stretchXL ref={ref} {...props}>
       {children}
     </StyledBaseCardWrapper>
   )

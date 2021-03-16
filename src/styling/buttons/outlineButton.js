@@ -1,11 +1,12 @@
 import * as React from "react"
 import styled from "styled-components"
-import { Size, Space } from "@layouts"
+import { Size, Margins, Paddings } from "@layouts"
 import { colorTheme } from "@colors/lib"
 
 const StyledOutlineButton = styled.button`
   ${Size}
-  ${Space}
+  ${Margins}
+  ${Paddings}
   position: relative;
   border: 2px solid;
   border-color: ${() => {
