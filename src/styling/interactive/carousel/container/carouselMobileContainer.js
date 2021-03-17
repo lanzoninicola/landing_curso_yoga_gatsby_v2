@@ -8,7 +8,7 @@ const StyledCarouselMobileContainer = styled(CarouselBaseContainer)``
 
 const CarouselMobileContainer = ({ children, ...props }) => {
   return (
-    <StyledCarouselMobileContainer pt="24" pb="24" ml="32" mr="32" {...props}>
+    <StyledCarouselMobileContainer ml="32" mr="32" {...props}>
       {children}
     </StyledCarouselMobileContainer>
   )

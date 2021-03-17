@@ -1,7 +1,8 @@
 import * as React from "react"
-import styled, { css, ThemeContext } from "styled-components"
+import styled, { css } from "styled-components"
 
-import { useViewportInfo, useResponsiveSize } from "@hooks"
+import { useResponsiveSize } from "@hooks"
+import { usePaddingTheme } from "@layouts"
 import { stringToArray, arrayToString, isString } from "@utils/index"
 
 export const Paddings = css`
@@ -65,23 +66,8 @@ const StyledPadding = styled.div`
 `
 
 export const Padding = React.forwardRef(({ children, ...props }, ref) => {
-  const themeContext = React.useContext(ThemeContext)
-  const { device } = useViewportInfo()
-  const layoutSpaceTheme = themeContext?.layout?.space
-  const themePaddingLeft = layoutSpaceTheme?.paddingLeft[device] ?? null
-  const themePaddingRight = layoutSpaceTheme?.paddingRight[device] ?? null
-  const themePaddingTop = layoutSpaceTheme?.paddingTop[device] ?? null
-  const themePaddingBottom = layoutSpaceTheme?.paddingBottom[device] ?? null
-
   return (
-    <StyledPadding
-      ref={ref}
-      pl={themePaddingLeft}
-      pr={themePaddingRight}
-      pt={themePaddingTop}
-      pb={themePaddingBottom}
-      {...props}
-    >
+    <StyledPadding ref={ref} {...props}>
       {children}
     </StyledPadding>
   )

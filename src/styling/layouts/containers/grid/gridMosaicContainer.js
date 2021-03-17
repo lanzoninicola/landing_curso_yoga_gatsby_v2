@@ -14,26 +14,26 @@ import { isUndefined, isNotString, warn, error } from "@utils/index"
  *
  */
 
-const StyledGridMosaicContainer = styled.div`
+export const GridMosaicBaseContainer = styled.div`
   ${Grid}
   grid-template-columns: ${({ columns, cAuto }) => {
     if (isUndefined(columns)) {
       return error(
-        `StyledGridMosaicContainer`,
+        `GridMosaicBaseContainer`,
         `"columns" prop is missing: ${typeof columns}. You must passing the "columns" prop in a "Mosaic Grid Container"`
       )
     }
 
     if (isNotString(columns)) {
       return error(
-        `StyledGridMosaicContainer`,
+        `GridMosaicBaseContainer`,
         `"columns" prop must be a string, instead: "${typeof columns}"`
       )
     }
 
     if (cAuto) {
       warn(
-        "StyledGridMosaicContainer",
+        "GridMosaicBaseContainer",
         `In a mosaic container you have to define the numbers of columns. This prop will be ignored.`
       )
     }
@@ -46,7 +46,7 @@ const StyledGridMosaicContainer = styled.div`
 
     if (isUndefined) {
       warn(
-        "StyledGridMosaicContainer",
+        "GridMosaicBaseContainer",
         `We will recommend you passing a value for "rHeight" prop to define the height of rows, otherwise the cells height will depend upon of its children height`
       )
     }
@@ -78,7 +78,7 @@ const StyledGridMosaicCellTall = styled.div`
 
 const GridMosaicContainer = ({ children, ...props }) => {
   return (
-    <StyledGridMosaicContainer {...props}>{children}</StyledGridMosaicContainer>
+    <GridMosaicBaseContainer {...props}>{children}</GridMosaicBaseContainer>
   )
 }
 

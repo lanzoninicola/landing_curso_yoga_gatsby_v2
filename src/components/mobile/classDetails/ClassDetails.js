@@ -1,12 +1,7 @@
 import * as React from "react"
 
 import { Title, SmallText } from "@typography"
-import {
-  FlexContainer,
-  Padding,
-  GridFixedContainer,
-  GridFluidContainer,
-} from "@layouts"
+import { FlexContainer, GridFluidSection, GridFixedContainer } from "@layouts"
 
 import ArrowRight from "../../decorative/ArrowRight"
 import ClassDetailsMobileCarousel from "./ClassDetailsMobileCarousel"
@@ -16,25 +11,23 @@ import ClassDetailsMobileCarousel from "./ClassDetailsMobileCarousel"
 // showArrows
 // infinite(true, false)
 
-export const ClassDetailsCarousel = () => {
+export const ClassDetails = () => {
   return (
     <>
-      <GridFluidContainer as="section" bg="white">
-        <Padding>
-          <GridFixedContainer columns="1fr" rows="1fr .1fr" gap="24">
-            <Title as="h2">Detalhes do curso</Title>
-            <FlexContainer row centerY left>
-              <SmallText ls="2" uppercase>
-                descubra
-              </SmallText>
-              <ArrowRight />
-            </FlexContainer>
-          </GridFixedContainer>
-          <ClassDetailsMobileCarousel />
-        </Padding>
-      </GridFluidContainer>
+      <GridFluidSection bg="white">
+        <GridFixedContainer columns="1fr" rAuto gap="16">
+          <Title as="h2">Detalhes do curso</Title>
+          <FlexContainer row centerY left>
+            <SmallText ls="2" uppercase>
+              descubra
+            </SmallText>
+            <ArrowRight />
+          </FlexContainer>
+        </GridFixedContainer>
+        <ClassDetailsMobileCarousel />
+      </GridFluidSection>
     </>
   )
 }
 
-export default ClassDetailsCarousel
+export default ClassDetails

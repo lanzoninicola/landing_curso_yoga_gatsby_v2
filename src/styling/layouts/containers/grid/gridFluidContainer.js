@@ -1,5 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
+
 import Grid from "./grid"
 
 import { useResponsiveSize } from "@hooks"
@@ -13,12 +15,12 @@ import { isNotUndefined, warn } from "@utils/index"
  *
  */
 
-const StyledGridFluidContainer = styled.div`
+export const GridFluidBaseContainer = styled(motion.div)`
   ${Grid}
   grid-template-columns: ${({ theme, columns, cSize }) => {
     if (isNotUndefined(columns)) {
       warn(
-        `StyledGridFluidContainer`,
+        `GridFluidBaseContainer`,
         `You've passed the "columns" prop in a "Fluid Container", the value will be ignored. You would probably want to use a "Fixed Grid"`
       )
     }
@@ -34,7 +36,7 @@ const StyledGridFluidContainer = styled.div`
   grid-template-rows: ${({ theme, rows, rSize }) => {
     if (isNotUndefined(rows)) {
       warn(
-        `StyledGridFluidContainer`,
+        `GridFluidBaseContainer`,
         `You've passed the "rows" prop in a "Fluid Container", the value will be ignored. You would probably want to use a "Fixed Grid"`
       )
     }
@@ -51,10 +53,6 @@ const StyledGridFluidContainer = styled.div`
   ${props => props.$style ?? {}}
 `
 
-const GridFluidContainer = ({ children, ...props }) => {
-  return (
-    <StyledGridFluidContainer {...props}>{children}</StyledGridFluidContainer>
-  )
+export const GridFluidContainer = ({ children, ...props }) => {
+  return <GridFluidBaseContainer {...props}>{children}</GridFluidBaseContainer>
 }
-
-export default GridFluidContainer

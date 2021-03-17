@@ -35,8 +35,8 @@ const typographyTheme = () => {
       },
 
       body: {
-        fontSize: { mobile: 26, tablet: 22, laptop: 26 },
-        lineHeight: { mobile: 28, tablet: 23, laptop: 27 },
+        fontSize: { mobile: 18, tablet: 22, laptop: 26 },
+        lineHeight: { mobile: 20, tablet: 23, laptop: 27 },
       },
       small: {
         fontSize: { mobile: 20, tablet: 10, laptop: 13 },

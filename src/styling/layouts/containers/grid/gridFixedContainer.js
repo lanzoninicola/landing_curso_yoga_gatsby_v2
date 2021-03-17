@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 import Grid from "./grid"
+
 import { parseGridTemplateValues } from "@layouts/lib/index"
 import { isUndefined, isNotString, warn, error } from "@utils/index"
 
@@ -14,12 +15,12 @@ import { isUndefined, isNotString, warn, error } from "@utils/index"
  *
  */
 
-const StyledGridFixedContainer = styled(motion.div)`
+export const GridFixedBaseContainer = styled(motion.div)`
   ${Grid}
   grid-template-columns: ${({ columns, cAuto }) => {
     if (!cAuto && isUndefined(columns)) {
       error(
-        `StyledGridFixedContainer`,
+        `GridFixedBaseContainer`,
         `"columns" prop is missing: ${typeof columns}. You must passing the "columns" prop in a "Fixed Grid Container"`
       )
       return
@@ -27,7 +28,7 @@ const StyledGridFixedContainer = styled(motion.div)`
 
     if (cAuto && columns) {
       warn(
-        "StyledGridFixedContainer",
+        "GridFixedBaseContainer",
         `You have passed "columns" prop with "cAuto / grid-auto-columns" prop. "columns" prop will be ignored`
       )
       return null
@@ -35,7 +36,7 @@ const StyledGridFixedContainer = styled(motion.div)`
 
     if (!cAuto && isNotString(columns)) {
       error(
-        `StyledGridFixedContainer`,
+        `GridFixedBaseContainer`,
         `"columns" prop must be a string, instead: "${typeof columns}"`
       )
       return
@@ -46,7 +47,7 @@ const StyledGridFixedContainer = styled(motion.div)`
   grid-template-rows: ${({ rows, rAuto }) => {
     if (!rAuto && isUndefined(rows)) {
       error(
-        `StyledGridFixedContainer`,
+        `GridFixedBaseContainer`,
         `"rows" prop is missing: ${typeof rows}. You must passing the "rows" prop in a "Fixed Grid Container"`
       )
       return
@@ -54,7 +55,7 @@ const StyledGridFixedContainer = styled(motion.div)`
 
     if (rAuto && rows) {
       warn(
-        "StyledGridFixedContainer",
+        "GridFixedBaseContainer",
         `You have passed "rows" prop with "rAuto / grid-auto-rows". "rows" prop will be ignored`
       )
       return null
@@ -62,7 +63,7 @@ const StyledGridFixedContainer = styled(motion.div)`
 
     if (!rAuto && isNotString(rows)) {
       error(
-        `StyledGridFixedContainer`,
+        `GridFixedBaseContainer`,
         `"rows" prop must be a string, instead: "${typeof rows}"`
       )
       return null
@@ -82,10 +83,6 @@ const StyledGridFixedContainer = styled(motion.div)`
   ${props => props.$style ?? {}}
 `
 
-const GridFixedContainer = ({ children, ...props }) => {
-  return (
-    <StyledGridFixedContainer {...props}>{children}</StyledGridFixedContainer>
-  )
+export const GridFixedContainer = ({ children, ...props }) => {
+  return <GridFixedBaseContainer {...props}>{children}</GridFixedBaseContainer>
 }
-
-export default GridFixedContainer

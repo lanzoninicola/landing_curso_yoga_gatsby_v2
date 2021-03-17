@@ -19,8 +19,8 @@ function layoutTheme() {
     space: {
       paddingLeft: { laptop: 112, tablet: 112, mobile: 32 },
       paddingRight: { laptop: 112, tablet: 112, mobile: 32 },
-      paddingTop: { laptop: 112, tablet: 112, mobile: 32 },
-      paddingBottom: { laptop: 112, tablet: 112, mobile: 32 },
+      paddingTop: { laptop: 112, tablet: 112, mobile: 88 },
+      paddingBottom: { laptop: 112, tablet: 112, mobile: 50 },
     },
     grid: {
       gap: {

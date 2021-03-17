@@ -43,7 +43,6 @@ export const ClassDetailsMobileCarousel = ({
     <>
       <CarouselMobileContainer>
         {paginatedItems?.map((item, index) => {
-          console.log(index)
           return (
             <FadeIn key={index} duration="1.5" triggerOnce={false}>
               <BaseCardWrapper ref={slideItemRef} gap="96">

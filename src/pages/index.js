@@ -8,11 +8,12 @@ import Hero from "../components/mobile/hero/Hero"
 import ClassDate from "../components/classDate/ClassDate"
 import Faq from "../components/faq/Faq"
 import ClassDateCTA from "../components/classDate/ClassDateCTA"
-import ClassDetailsCarousel from "../components/mobile/classDetails/ClassDetails"
+import ClassDetails from "../components/mobile/classDetails/ClassDetails"
 import Differential from "../components/mobile/differential/differential"
 import Quality from "../components/mobile/quality/quality"
 import Benefits from "../components/mobile/benefits/benefits"
 import Target from "../components/mobile/target/target"
+import Bio from "../components/mobile/bio/bio"
 
 const IndexPage = () => {
   const { device } = useViewportInfo()
@@ -27,7 +28,8 @@ const IndexPage = () => {
           <Quality />
           <Benefits />
           <Target />
-          <ClassDetailsCarousel />
+          <ClassDetails />
+          <Bio />
           {/*<ClassDate />
           <ClassDateCTA />*/}
           {/* <Faq /> */}
