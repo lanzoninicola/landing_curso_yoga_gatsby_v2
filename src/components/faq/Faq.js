@@ -23,7 +23,12 @@ const Faq = () => {
       rSize=""
       bg="white"
     >
-      <Title as="h2" color="purple" mb={{ laptop: 60, tablet: 60, mobile: 40 }}>
+      <Title
+        as="h2"
+        weight="800"
+        color="purple"
+        mb={{ laptop: 60, tablet: 60, mobile: 40 }}
+      >
         Perguntas
       </Title>
       {device === "laptop" && <FaqLaptop faqs={faqs} />}

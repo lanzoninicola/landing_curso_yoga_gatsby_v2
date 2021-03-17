@@ -17,7 +17,7 @@ const Quality = () => {
         }}
       >
         <GridFixedContainer columns="1fr" rAuto w100 gap="16">
-          <Title as="h2" color="white">
+          <Title as="h2" weight="800" color="white">
             <Typewriter
               onInit={typewriter => {
                 typewriter

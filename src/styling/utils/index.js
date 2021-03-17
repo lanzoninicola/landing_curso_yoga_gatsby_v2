@@ -30,6 +30,7 @@ import removePropsFromObject from "./removePropsFromObject"
 import randomItemFromArray from "./randomItemFromArray"
 import isBoolean from "./isBoolean"
 import paginator from "./paginator"
+import renderTextUpto from "./renderTextUpto"
 
 export {
   left,
@@ -66,4 +67,5 @@ export {
   randomItemFromArray,
   isBoolean,
   paginator,
+  renderTextUpto,
 }

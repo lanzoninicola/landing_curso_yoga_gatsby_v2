@@ -29,7 +29,7 @@ const Modal = ({ pageTitle }) => {
   return (
     <ModalBase>
       <PancakeStack>
-        <Title as="h2" align="center" color="orange" weight="400">
+        <Title as="h2" weight="800" align="center" color="orange" weight="400">
           fale conosco
         </Title>
         <ModalInner>

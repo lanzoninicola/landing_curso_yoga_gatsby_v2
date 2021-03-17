@@ -14,6 +14,7 @@ import Quality from "../components/mobile/quality/quality"
 import Benefits from "../components/mobile/benefits/benefits"
 import Target from "../components/mobile/target/target"
 import Bio from "../components/mobile/bio/bio"
+import FreeClassCTA from "../components/mobile/freeClassCTA/freeClassCTA"
 
 const IndexPage = () => {
   const { device } = useViewportInfo()
@@ -29,6 +30,7 @@ const IndexPage = () => {
           <Benefits />
           <Target />
           <ClassDetails />
+          <FreeClassCTA />
           <Bio />
           {/*<ClassDate />
           <ClassDateCTA />*/}

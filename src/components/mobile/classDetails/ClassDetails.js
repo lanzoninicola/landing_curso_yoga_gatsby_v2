@@ -16,15 +16,17 @@ export const ClassDetails = () => {
     <>
       <GridFluidSection bg="white">
         <GridFixedContainer columns="1fr" rAuto gap="16">
-          <Title as="h2">Detalhes do curso</Title>
+          <Title as="h2" weight="800">
+            Detalhes do curso
+          </Title>
           <FlexContainer row centerY left>
             <SmallText ls="2" uppercase>
               descubra
             </SmallText>
             <ArrowRight />
           </FlexContainer>
+          <ClassDetailsMobileCarousel />
         </GridFixedContainer>
-        <ClassDetailsMobileCarousel />
       </GridFluidSection>
     </>
   )

@@ -10,6 +10,8 @@ import CarouselChevron from "./navigators/chevron/chevron"
 
 import useSlider from "./carousel/lib/useSlider"
 
+import useExpandCollapse from "./expandCollapse/lib/useExpandCollapse"
+
 export {
   CarouselContainer,
   CarouselBaseContainer,
@@ -18,4 +20,5 @@ export {
   BaseCardWrapper,
   CarouselChevron,
   useSlider,
+  useExpandCollapse,
 }

@@ -7,6 +7,7 @@
 // You can delete this file if you're not using it
 
 import "@fontsource/montserrat-alternates/800.css"
+import "@fontsource/montserrat-alternates/600.css"
 import "@fontsource/ropa-sans"
 
 import { wrapRootElement as wrap } from "./src/styling/_gatsby/index"

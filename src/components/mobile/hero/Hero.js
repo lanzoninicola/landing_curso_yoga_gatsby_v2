@@ -56,7 +56,13 @@ const Hero = () => {
               <Title as="h1" color="white" mb="16">
                 20 encontros pra melhorar
               </Title>
-              <Title as="h2" variant="secondary" color="white" mb="16">
+              <Title
+                as="h2"
+                weight="800"
+                variant="secondary"
+                color="white"
+                mb="16"
+              >
                 Lorem Ipsum advocada vostra homapa lompa giuggola
               </Title>
               <BaseButton>Eu quero partecipar ao curso</BaseButton>
